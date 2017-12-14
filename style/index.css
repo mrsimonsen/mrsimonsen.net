@@ -15,7 +15,7 @@ header{
   background-image: url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:500px top, 725px top, 950px top, 1175px top, 1400px top;
+  background-position:500px top, 750px top, 1000px top, 1250px top, 1500px top;
   width: 100%;
   border-bottom: 1px dashed #B5E853;
   padding: 20px 0;
@@ -59,6 +59,7 @@ li a{
   padding: 20px;
   background-color: clear;
   border: 1px dashed #B5E853;
+  font-size: 24px;
 }
 li a.active{
   background-color: #B5E853;
@@ -66,6 +67,14 @@ li a.active{
 }
 li a:hover:not(.active){
   background-color: blue;
+  color: white;
+}
+/*
+Links
+*/
+a {
+  color: #63c0f5;
+  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 /*
 Main Content
@@ -84,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 1px 16px;
   -webkit-font-smoothing: antialiased;
+  min-height: 650px;
 }
 #main_content h1 {
   font-size: 30px;
@@ -119,4 +129,15 @@ Footer
 */
 footer{
   bottom: 0;
+}
+pre {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  font-size: 16px;
+  color: #b5e853;
+  border-radius: 2px;
+  text-wrap: normal;
+  overflow: auto;
+  overflow-y: hidden;
 }
