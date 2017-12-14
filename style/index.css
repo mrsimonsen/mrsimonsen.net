@@ -1,4 +1,54 @@
-header{
-  background-image: url("../files/bits.jpg");
-  background-position: 50% 50%;
+/*
+Body
+*/
+body {
+  background: #151515 url("../files/bkg.png") 0 0;
+  color: #eaeaea;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
+/*
+Header
+*/
+header{
+  background-image: url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:500px top, 725px top, 950px top, 1175px top, 1400px top;
+  width: 100%;
+  border-bottom: 1px dashed #B5E853;
+  padding: 20px 0;
+}
+header h1::before {
+  content: "./ ";
+  font-size: 24px;
+}
+header h1 {
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: bold;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  color: #b5e853;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px rgba(181, 232, 83, 0.1),
+               0 0 10px rgba(181, 232, 83, 0.1);
+  letter-spacing: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+header h2 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+}
+/*
+Nav Bar
+*/
+
+/*
+Main Content
+*/
+
+/*
+Footer
+*/
