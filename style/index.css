@@ -8,6 +8,9 @@ body {
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
+*{
+    box-sizing: border-box;
+}
 /*
 Headers
 */
@@ -76,6 +79,19 @@ Links
 a {
   color: #63c0f5;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}
+/*
+Columns
+*/
+.column{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
 }
 /*
 Main Content
