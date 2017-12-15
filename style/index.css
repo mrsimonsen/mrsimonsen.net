@@ -44,7 +44,7 @@ header h2{
 /*
 Nav Bar
 */
-ul{
+nav{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -52,19 +52,21 @@ ul{
   position: absolute;
   overflow: auto;
 }
-li a{
+ul{
+  list-style-image: url("../files/bullet.png");
+}
+nav li a{
   display: block;
   text-decoration: none;
   padding: 20px;
-  background-color: clear;
   border: 1px dashed #B5E853;
   font-size: 24px;
 }
-li a.active{
+nav li a.active{
   background-color: #B5E853;
   color: black;
 }
-li a:hover:not(.active){
+nav li a:hover:not(.active){
   background-color: blue;
   color: white;
 }
