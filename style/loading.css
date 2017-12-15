@@ -1,17 +1,12 @@
-body {
-  background: #111;
+div {
+  position: relative;
+  top: 50%;
+  margin: 100px auto auto auto;
+  text-align: center;
   color: #411;
   font-family: Consolas, Courier, monospace;
   font-size: 60px;
   text-shadow: 0 0 15px #411;
-  height: 100%;
-}
-
-div {
-  position: relative;
-  top: 50%;
-  margin: 200px auto;
-  text-align: center;
 }
 
 .glow {
