@@ -50,7 +50,6 @@ ul{
   padding: 0;
   width: 20%;
   position: absolute;
-  min-height: 750px;
   overflow: auto;
 }
 li a{
@@ -93,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 1px 16px;
   -webkit-font-smoothing: antialiased;
-  min-height: 650px;
+  min-height: 600px;
 }
 #main_content h1 {
   font-size: 30px;
