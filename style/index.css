@@ -1,3 +1,11 @@
+#zyBooks{
+  font-weight: normal;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  color: #b5e853;
+  font-size: 24px;
+  text-decoration-color: #63c0f5;
+}
+
 /*
 Body
 */
