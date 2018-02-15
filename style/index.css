@@ -26,10 +26,10 @@ hr{
 Headers
 */
 header{
-  background-image: url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg"), url("../files/tech_vader.jpg");
+  background-image: url("../files/ST_classroom.png"), url("../files/tech_vader.jpg"), url("../files/detailed_B1.jpeg"), url("../files/drawn-star-wars-concept-5.jpg"), url("../files/astromech_concept.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:500px top, 750px top, 1000px top, 1250px top, 1500px top;
+  background-position:500px top, 750px top, 990px top, 1245px top, 1485px top;
   width: 100%;
   border-bottom: 1px dashed #B5E853;
   padding: 20px 0;
