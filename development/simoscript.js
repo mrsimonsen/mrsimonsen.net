@@ -1,13 +1,10 @@
 //navDrop
-function navDrop(id1, id2){
+function navDrop(id1){
   var content = document.getElementById(id1);
-  var icon = document.getElementById(id2);
   if(content.className.indexOf("w3-show")== -1){
     content.className += " w3-show";
-    icon.className = icon.className.replace(" fa-plus", " fa-minus");
   } else{
     content.className = content.className.replace(" w3-show", "");
-    icon.className = icon.className.replace(" fa-minus", " fa-plus");
   }
 }
 // Side navigation
@@ -21,3 +18,20 @@ function w3_open() {
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
+// Tabs
+function openClass(evt, course) {
+  var i;
+  var x = document.getElementsByClassName("course");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-black", "");
+  }
+  document.getElementById(course).style.display = "block";
+  evt.currentTarget.className += " w3-black";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
