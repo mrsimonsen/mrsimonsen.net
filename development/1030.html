@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CS 1030</title>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>CS 1030</title>
+      <link href="../files/logo.png" rel="icon" type="image">
+      <!--standard w3 css stylesheet-->
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+      <script src="W3js.js" defer></script>
+      <!--my stylesheet-->
+      <link rel="stylesheet" href="simostyle.css">
+      <!--color theme - https://www.w3schools.com/w3css/w3css_color_generator.asp-->
+      <style>
+        .w3-theme-l5 {color:#000 !important; background-color:#f0feee !important}
+        .w3-theme-l4 {color:#000 !important; background-color:#ccfbc7 !important}
+        .w3-theme-l3 {color:#000 !important; background-color:#99f78e !important}
+        .w3-theme-l2 {color:#000 !important; background-color:#66f356 !important}
+        .w3-theme-l1 {color:#fff !important; background-color:#33ef1e !important}
+        .w3-theme-d1 {color:#fff !important; background-color:#1db00c !important}
+        .w3-theme-d2 {color:#fff !important; background-color:#199c0b !important}
+        .w3-theme-d3 {color:#fff !important; background-color:#16890a !important}
+        .w3-theme-d4 {color:#fff !important; background-color:#137508 !important}
+        .w3-theme-d5 {color:#fff !important; background-color:#106207 !important}
 
+        .w3-theme-light {color:#000 !important; background-color:#f0feee !important}
+        .w3-theme-dark {color:#20c20e !important; background-color:#000 !important}
+        .w3-theme-action {color:#fff !important; background-color:#106207 !important}
 
-    <link href="../files/logo.png" rel="icon" type="image">
-    <!--Loading-->
-    <link rel="stylesheet" href="style/loading.css">
-    <script src="scripts/loading.js" defer></script>
-    <script src="scripts/jquery-3.2.1.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>Mr. Simonsen</h1>
-      <h2>For all your Computer Science needs</h2>
-    </header>
-    <nav>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="web-dev.html">Web Development</a></li>
-      <li><a href="1010.html">CS 1010 - Game Development Fundamentals</a></li>
-      <li><a class="active" href="1030.html">CS 1030 - Computer Science Principles (Python)</a></li>
-      <li><a href="1400.html">CS 1400 - Programming 1 (Java)</a></li>
-      <li><a href="cyberpatriot.html">CyberPatriot</a></li>
-      <li><a href="https://nuames.org" target="_blank">NUAMES</a></li>
-    </nav>
+        .w3-theme {color:#fff !important; background-color:#20c20e !important}
+        .w3-text-theme {color:#20c20e !important}
+        .w3-border-theme {border-color:#20c20e !important}
+
+        .w3-hover-theme:hover {color:#fff !important; background-color:#20c20e !important}
+        .w3-hover-text-theme:hover {color:#20c20e !important}
+        .w3-hover-border-theme:hover {border-color:#20c20e !important}
+      </style>
+    </head>
+    <body>
+      <!-- Side Navigation -->
+      <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none" id="mySidebar">
+        <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+        <button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+        <a href="index.html" class="w3-bar-item w3-button w3-text-theme">Home <i class="fa fa-home"></i></a>
+        <button onclick="navDrop('classes','icon')" class="w3-padding-16 w3-button w3-block">My Classes <i id="icon" class="fa fa-plus"></i></button>
+        <div id="classes" class="w3-hide">
+          <a href="1010.html" class="w3-bar-item w3-button w3-text-theme">Game Development - CS 1010 <i class="fa fa-gamepad"></i></a>
+          <a href="1030.html" class="w3-bar-item w3-button w3-text-theme">Computer Science Principles - CS 1030 <i class="fa fa-github-alt"></i></a>
+          <a href="1400.html" class="w3-bar-item w3-button w3-text-theme">Programming 1 - CS 1400 <i class="fa fa-desktop"></i></a>
+          <a href="web-dev.html" class="w3-bar-item w3-button w3-text-theme">Web Development <i class="fa fa-file-code-o"></i></a>
+        </div>
+        <a href="cyberpatriot.html" class="w3-bar-item w3-button w3-text-theme"><i class="fa fa-windows"></i> CyberPatriot <i class="fa fa-linux"></i></a>
+        <a href="https://nuames.org" class="w3-bar-item w3-button w3-text-theme">NUAMES <i class="fa fa-university"></i></a>
+        <a href="blog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fa fa-cogs"></i> Hobbies <i class="fa fa-empire"></i></a>
+      </nav>
+      <!-- Header -->
+      <header class="w3-container w3-theme-dark w3-padding" id="myHeader">
+        <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
+        <div class="w3-center">
+          <span class="w3-xxxlarge w3-animate-bottom ">
+            <h1 class="w3-theme-dark">Mr. Simonsen</h1>
+            <h4 class="w3-theme-dark">for all your computer science needs</h4>
+            </span>
+          <br><br>
+        </div>
+      </header>
     <div id="main_content">
       <!--
         <h2>Useful Links</h2>
