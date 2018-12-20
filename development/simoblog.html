@@ -8,7 +8,7 @@
   <!--standard w3 css stylesheet-->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <!--my stylesheet-->
   <script src="simoscript.js" defer></script>
   <link rel="stylesheet" href="simostyle.css">
@@ -17,19 +17,19 @@
   <!-- Side Navigation -->
   <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none" id="mySidebar">
     <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
-    <button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+    <button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i class="fas fa-times"></i></button>
     <a href="index.html" class="w3-bar-item w3-button w3-text-theme">Home <i class="fa fa-home"></i></a>
     <a href="classes.html" class="w3-bar-item w3-button w3-text-theme">My Classes <i id="icon" class="fa fa-graduation-cap"></i></a>
-    <a href="cyberpatriot.html" class="w3-bar-item w3-button w3-text-theme"><i class="fa fa-windows"></i> CyberPatriot <i class="fa fa-linux"></i></a>
+    <a href="cyberpatriot.html" class="w3-bar-item w3-button w3-text-theme"><i class="fab fa-windows"></i> CyberPatriot <i class="fab fa-linux"></i></a>
     <a href="https://nuames.org" class="w3-bar-item w3-button w3-text-theme">NUAMES <i class="fa fa-university"></i></a>
-    <a href="simoblog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fa fa-cogs"></i> Hobbies <i class="fa fa-empire"></i></a>
+    <a href="simoblog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fa fa-cogs"></i> Hobbies <i class="fab fa-empire"></i></a>
   </nav>
   <!-- Header -->
   <header class="w3-container w3-theme-dark w3-padding" id="myHeader">
     <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
     <div class="w3-center">
       <span class="w3-xxxlarge w3-animate-bottom ">
-        <h1 class="w3-theme-dark"><i class="fa fa-empire"></i> Simonsen Hobbies <i class="fa fa-cogs"></i></h1>
+        <h1 class="w3-theme-dark"><i class="fab fa-empire"></i> Simonsen Hobbies <i class="fa fa-cogs"></i></h1>
         </span>
       <br><br>
     </div>
@@ -46,14 +46,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
     <div class="w3-container">
+      <header class="w3-theme">
       <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <h5><span class="w3-opacity">April 7, 2014</span></h5>
+    </header>
     </div>
 
     <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+      <p>Short Description of entry. Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
         tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
@@ -64,12 +65,11 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
       </div>
     </div>
-  </div>
+  </div><!--end Blog entry-->
   <hr>
 
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
     <div class="w3-container">
       <h3><b>BLOG ENTRY</b></h3>
       <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
@@ -87,7 +87,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
       </div>
     </div>
-  </div>
+  </div><!--end Blog entry-->
 <!-- END BLOG ENTRIES -->
 </div>
 
@@ -137,11 +137,21 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h4>Tags</h4>
     </div>
     <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    <p>
+      <span class="w3-tag w3-black w3-margin-bottom">Star Wars</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Astromech</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Cryptogrophy</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Python</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Arduio</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Robotics</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Computer Science</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Metal Casting</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Forge</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Video Games</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">D&D</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Woodworking</span>
     </p>
     </div>
   </div>
@@ -149,14 +159,14 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END Introduction Menu -->
 </div>
 <!--pagination-->
-<div class="w3-bar w3-xlarge w3-center w3-disabled">
-  <a href="simoblog.html" class="w3-button w3-disabled">&laquo;</a>
-  <a href="simoblog.html" class="w3-button w3-disabled">1</a>
-  <a href="simoblog2.html" class="w3-button">2</a>
-  <a href="simoblog3.html" class="w3-button">3</a>
-  <a href="simoblog4.html" class="w3-button">4</a>
-  <a href="simoblog5.html" class="w3-button">5</a>
-  <a href="simoblog2.html" class="w3-button">&raquo;</a>
+<div class="w3-bar w3-xlarge w3-center">
+  <a href="simoblog.html" class="w3-button w3-hover-black w3-disabled"><i class="fas fa-angle-double-left"></i></a>
+  <a href="simoblog.html" class="w3-button w3-hover-dark-grey w3-disabled">1</a>
+  <a href="simoblog2.html" class="w3-button w3-hover-dark-grey">2</a>
+  <a href="simoblog3.html" class="w3-button w3-hover-dark-grey">3</a>
+  <a href="simoblog4.html" class="w3-button w3-hover-dark-grey">4</a>
+  <a href="simoblog5.html" class="w3-button w3-hover-dark-grey">5</a>
+  <a href="simoblog2.html" class="w3-button w3-hover-black"><i class="fas fa-angle-double-right"></i></a>
 </div>
 
 <!-- END GRID -->
