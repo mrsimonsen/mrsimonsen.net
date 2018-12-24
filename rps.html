@@ -74,6 +74,74 @@
             w.innerHTML = "spock vaporizes rock<br>Player Wins";
           }
           break;
+        case 2:
+          if (choice == 'rock'){
+            w.innerHTML = "paper covers rock<br>Computer Wins";
+          }
+          else if (choice == 'paper') {
+            w.innerHTML = "Draw";
+          }
+          else if (choice == 'scissors') {
+            w.innerHTML = "scissors cuts paper<br>Player Wins";
+          }
+          else if (choice == 'lizard') {
+            w.innerHTML = "lizard eats paper<br>Player Wins";
+          }
+          else if (choice == 'spock') {
+            w.innerHTML = "paper disproves spock<br>Computer Wins";
+          }
+          break;
+        case 3:
+          if (choice == 'rock'){
+            w.innerHTML = "rock crushes scissors<br>Player Wins";
+          }
+          else if (choice == 'paper') {
+            w.innerHTML = "scissors cut paper<br>Computer Wins";
+          }
+          else if (choice == 'scissors') {
+            w.innerHTML = "Draw";
+          }
+          else if (choice == 'lizard') {
+            w.innerHTML = "scissors decapitates lizard<br>Computer Wins";
+          }
+          else if (choice == 'spock') {
+            w.innerHTML = "spock smashes scissors<br>Player Wins";
+          }
+          break;
+        case 4:
+          if (choice == 'rock'){
+            w.innerHTML = "rock crushes lizard<br>Player Wins";
+          }
+          else if (choice == 'paper') {
+            w.innerHTML = "lizard eats paper<br>Computer Wins";
+          }
+          else if (choice == 'scissors') {
+            w.innerHTML = "scissors decapitates lizard<br>Player Wins";
+          }
+          else if (choice == 'lizard') {
+            w.innerHTML = "Draw";
+          }
+          else if (choice == 'spock') {
+            w.innerHTML = "lizard poisons spack<br>Computer Wins";
+          }
+          break;
+        case 5:
+          if (choice == 'rock'){
+            w.innerHTML = "spock vaporizes rock<br>Computer Wins";
+          }
+          else if (choice == 'paper') {
+            w.innerHTML = "paper disproves spock<br>Player Wins";
+          }
+          else if (choice == 'scissors') {
+            w.innerHTML = "spock smashes scissors<br>Computer Wins";
+          }
+          else if (choice == 'lizard') {
+            w.innerHTML = "lizard poisons spack<br>Player Wins";
+          }
+          else if (choice == 'spock') {
+            w.innerHTML = "Draw";
+          }
+          break;
         default:
           console.log('something broke!')
       }
