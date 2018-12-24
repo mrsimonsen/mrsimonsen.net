@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <title>RPSLS</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+</head>
+<body>
+  <h1>Rock Paper Scissors lizard Spock</h1>
+  <h2>Choose your weapon!</h2>
+  <button><i onclick="shoot('rock')" style="font-size:48px;" class="fas fa-hand-rock"></i></button>
+  <button><i onclick="shoot('paper')" style="font-size:48px;" class="fas fa-hand-paper"></i></button>
+  <button><i onclick="shoot('scissors')" style="font-size:48px;" class="fas fa-hand-scissors"></i></button>
+  <button><i onclick="shoot('lizard')" style="font-size:48px;" class="fas fa-hand-lizard"></i></button>
+  <button><i onclick="shoot('spock')" style="font-size:48px;" class="fas fa-hand-spock"></i></button>
+  <h4>Player choice <i id="player" class="fas fa-question-circle"></i></h4>
+  <h4>Computer choice <i id="comp" class="fas fa-question-circle"></i></h4>
+  <h1 id='winner'></h1>
+  <img src="https://wiki.hobowars.com/images/7/76/400x365xRPSLSDiagram.png.pagespeed.ic.X_SgZcbLxA.png">
+  <script>
+    function shoot(choice){
+      var p = document.getElementById('player');
+      var c = document.getElementById('comp');
+      var w = document.getElementById('winner');
+      //display player choice
+      if (choice == 'rock'){
+        p.className = "fas fa-hand-rock";
+      }
+      else if (choice == 'paper') {
+        p.className = "fas fa-hand-paper";
+      }
+      else if (choice == 'scissors') {
+        p.className = "fas fa-hand-scissors";
+      }
+      else if (choice == 'lizard') {
+        p.className = "fas fa-hand-lizard";
+      }
+      else if (choice == 'spock') {
+        p.className = "fas fa-hand-spock";
+      }
+      //determine comp choice
+      var cc = Math.floor(Math.random()*4)+1;
+      //display comp choice
+      if (cc == 1){
+        c.className = "fas fa-hand-rock";
+      }
+      else if (cc == 2) {
+        c.className = "fas fa-hand-paper";
+      }
+      else if (cc == 3) {
+        c.className = "fas fa-hand-scissors";
+      }
+      else if (cc == 4) {
+        c.className = "fas fa-hand-lizard";
+      }
+      else if (cc == 5) {
+        c.className = "fas fa-hand-spock";
+      }
+      //determine winner & display branches
+      switch (cc) {
+        case 1:
+          if (choice == 'rock'){
+            w.innerHTML = "Draw";
+          }
+          else if (choice == 'paper') {
+            w.innerHTML = "paper covers rock<br>Player Wins";
+          }
+          else if (choice == 'scissors') {
+            w.innerHTML = "rock crushes scissors<br>Computer Wins";
+          }
+          else if (choice == 'lizard') {
+            w.innerHTML = "rock cruches lizard<br>Computer Wins";
+          }
+          else if (choice == 'spock') {
+            w.innerHTML = "spock vaporizes rock<br>Player Wins";
+          }
+          break;
+        default:
+          console.log('something broke!')
+      }
+    }
+  </script>
+</body>
+</html>
