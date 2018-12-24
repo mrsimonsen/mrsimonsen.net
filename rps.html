@@ -12,11 +12,18 @@
   <button><i onclick="shoot('scissors')" style="font-size:48px;" class="fas fa-hand-scissors"></i></button>
   <button><i onclick="shoot('lizard')" style="font-size:48px;" class="fas fa-hand-lizard"></i></button>
   <button><i onclick="shoot('spock')" style="font-size:48px;" class="fas fa-hand-spock"></i></button>
-  <h4>Player choice <i id="player" class="fas fa-question-circle"></i></h4>
-  <h4>Computer choice <i id="comp" class="fas fa-question-circle"></i></h4>
+  <h4><span id='pwin'></span> Player choice <i id="player" class="fas fa-question-circle"></i></h4>
+  <h4><span id='cwin'></span> Computer choice <i id="comp" class="fas fa-question-circle"></i></h4>
   <h1 id='winner'></h1>
   <img src="https://wiki.hobowars.com/images/7/76/400x365xRPSLSDiagram.png.pagespeed.ic.X_SgZcbLxA.png">
   <script>
+    var pwins = 0;
+    var cwins = 0;
+    function r(){
+      document.getElementById('pwin').innerHTML = pwins;
+      document.getElementById('cwin').innerHTML = cwins;
+    }
+    r();
     function shoot(choice){
       var p = document.getElementById('player');
       var c = document.getElementById('comp');
@@ -63,80 +70,100 @@
           }
           else if (choice == 'paper') {
             w.innerHTML = "paper covers rock<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'scissors') {
             w.innerHTML = "rock crushes scissors<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'lizard') {
             w.innerHTML = "rock cruches lizard<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'spock') {
             w.innerHTML = "spock vaporizes rock<br>Player Wins";
+            pwins ++;
           }
           break;
         case 2:
           if (choice == 'rock'){
             w.innerHTML = "paper covers rock<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'paper') {
             w.innerHTML = "Draw";
           }
           else if (choice == 'scissors') {
             w.innerHTML = "scissors cuts paper<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'lizard') {
             w.innerHTML = "lizard eats paper<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'spock') {
             w.innerHTML = "paper disproves spock<br>Computer Wins";
+            cwins ++;
           }
           break;
         case 3:
           if (choice == 'rock'){
             w.innerHTML = "rock crushes scissors<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'paper') {
             w.innerHTML = "scissors cut paper<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'scissors') {
             w.innerHTML = "Draw";
           }
           else if (choice == 'lizard') {
             w.innerHTML = "scissors decapitates lizard<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'spock') {
             w.innerHTML = "spock smashes scissors<br>Player Wins";
+            pwins ++;
           }
           break;
         case 4:
           if (choice == 'rock'){
             w.innerHTML = "rock crushes lizard<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'paper') {
             w.innerHTML = "lizard eats paper<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'scissors') {
             w.innerHTML = "scissors decapitates lizard<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'lizard') {
             w.innerHTML = "Draw";
           }
           else if (choice == 'spock') {
             w.innerHTML = "lizard poisons spack<br>Computer Wins";
+            cwins ++;
           }
           break;
         case 5:
           if (choice == 'rock'){
             w.innerHTML = "spock vaporizes rock<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'paper') {
             w.innerHTML = "paper disproves spock<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'scissors') {
             w.innerHTML = "spock smashes scissors<br>Computer Wins";
+            cwins ++;
           }
           else if (choice == 'lizard') {
             w.innerHTML = "lizard poisons spack<br>Player Wins";
+            pwins ++;
           }
           else if (choice == 'spock') {
             w.innerHTML = "Draw";
@@ -145,6 +172,7 @@
         default:
           console.log('something broke!')
       }
+      r();
     }
   </script>
 </body>
