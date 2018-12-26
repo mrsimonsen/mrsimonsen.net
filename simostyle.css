@@ -7,3 +7,9 @@
 body{
   background-color:lightgrey;
 }
+.clamp{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.2em;
+}
