@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title>Dice</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+</head>
+<body>
+  <h1>Roll a d6</h1>
+  <button onclick="roll()"><i id="die" class="fas fa-dice-d6" style="font-size:48px;"></i></button>
+  <script>
+    function roll(){
+      var num = Math.floor(Math.random()*5)+1;
+      console.log(num);
+      var d = document.getElementById("die");
+      if (num == 1){
+        d.className = "fas fa-dice-one";
+      }
+      else if (num == 2) {
+        d.className = "fas fa-dice-two";
+      }
+      else if (num == 3) {
+        d.className = "fas fa-dice-three";
+      }
+      else if (num == 4) {
+        d.className = "fas fa-dice-four";
+      }
+      else if (num == 5) {
+        d.className = "fas fa-dice-five";
+      }
+      else if (num == 6) {
+        d.className = "fas fa-dice-six";
+      }
+      else {
+        console.log("BROKEN");
+        d.className = "fas fa-dice-d6";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Mr. Simonsen's Classroom</title>
-    <link href="style/jekyll-theme-hacker.css" rel="stylesheet">
-    <link href="style/index.css" rel="stylesheet">
-    <link href="files/Shell.ico" rel="icon" type="image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr. Simonsen's Website</title>
+    <link href="files/logo.png" rel="icon" type="image">
+    <!--standard w3 css stylesheet-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!--my stylesheet and javascript-->
+    <script src="simoscript.js" defer></script>
+    <link rel="stylesheet" href="simostyle.css">
   </head>
   <body>
-    <header>
-      <h1>Mr. Simonsen</h1>
-      <h2>For all your Computer Science needs</h2>
-    </header>
-    <nav>
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="digital.html">Digital Media</a></li>
-      <li><a href="web-dev.html">Web Development</a></li>
-      <li><a href="game-dev.html">CS 1010 - Game Development Fundamentals</a></li>
-      <li><a href="python.html">CS 1030 - Computer Science Principles (Python)</a></li>
-      <li><a href="java.html">CS 1400 - Programming 1 (Java)</a></li>
-      <li><a href="cyberpatriot.html">CyberPatriot</a></li>
-      <li><a href="https://nuames.org" target="_blank">NUAMES</a></li>
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none" id="mySidebar">
+      <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+      <button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i class="fas fa-times"></i></button>
+      <a href="index.html" class="w3-bar-item w3-button w3-text-theme">Home <i class="fa fa-home"></i></a>
+      <a href="classes.html" class="w3-bar-item w3-button w3-text-theme">My Classes <i id="icon" class="fas fa-graduation-cap"></i></a>
+      <a href="cyberpatriot.html" class="w3-bar-item w3-button w3-text-theme"><i class="fab fa-windows"></i> CyberPatriot <i class="fab fa-linux"></i></a>
+      <a href="https://nuames.org" class="w3-bar-item w3-button w3-text-theme">NUAMES <i class="fas fa-school"></i></a>
+      <!--<a href="simoblog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fas fa-microchip"></i> Hobbies <i class="fab fa-empire"></i></a>-->
     </nav>
-    <div id="main_content">
-      <h1>Welcome to Mr. Simonsen's online classroom companion.</h1>
+    <!-- Header -->
+    <header class="w3-container w3-theme-dark w3-padding" id="myHeader">
+      <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
+      <div class="w3-center">
+        <span class="w3-xxxlarge w3-animate-bottom ">
+          <h1 class="w3-theme-dark">Mr. Simonsen</h1>
+          <h4 class="w3-theme-dark">for all your computer science needs</h4>
+          </span>
+        <br><br>
+      </div>
+    </header>
+    <!-- modal embeded discord server -->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-theme-dark">
+          <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">×</span>
+          <h5 style="text-align:center;"><i class="fab fa-discord"></i> Discord <i class="fab fa-discord"></i></h5>
+        </header>
+        <div class="w3-padding w3-center">
+          <iframe src="https://titanembeds.com/embed/426032570455556096?defaultchannel=451023701933031434&theme=MetroEdge" height="300px" width="550px" frameborder="0"></iframe>
+        </div>
+        <footer class="w3-container w3-theme-l1">
+          <h4>Join my <a href="https://discord.gg/sWXmB8U">Discord Server</a> <i class="fab fa-discord"></i></h4>
+        </footer>
+      </div>
+    </div>
+  </div>
+    <div class="w3-container w3-padding">
+    <h1>Welcome to Mr. Simonsen's website</h1>
       <p>Here you will find pages for all of my classes.<br>
       Each class page contains a history of what we're doing in class, as well as useful links (like where to turn in your homework or download software).<br>
-      I am avaliable most days before and after school if you need help: appointments preferred but not required.<br>
-      Missing Assingments Logs must be filled out to recieve credit for late work.</p>
+      I am avaliable most days before and after school if you need help: appointments preferred but not required.</p>
       <br>
-      <h2>Join the class <a href="https://discord.gg/sWXmB8U">Discord Server</a></h2>
-
-      <p><a style="font-size:1.25em;" href="http://continue.weber.edu/concurrentenrollment/" target="_blank">Register for my CE courses</a></p>
-      <p><a style="font-size:1.25em;" href="https://docs.google.com/forms/d/e/1FAIpQLSdrVHNclz9N0A7LvYgFGCrpyQf7R_Tlucf9QKBI9Sv2IG6D-Q/viewform?usp=sf_link" target="_blank">Parent Permission Form</a></p>
-      <iframe src="https://titanembeds.com/embed/426032570455556096?defaultchannel=451023701933031434&theme=MetroEdge" height="600" width="800" frameborder="0"></iframe>
-
+      <div class="w3-padding-32">
+        <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:500;"><i class="fab fa-discord"></i> Discord <i class="fab fa-discord"></i></button>
+      </div>
+      <a href="http://continue.weber.edu/concurrentenrollment/" target="_blank"><i class="fas fa-graduation-cap"></i> Register for my CE courses <i class="fas fa-graduation-cap"></i></a>
       <br>
-      <br>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrVHNclz9N0A7LvYgFGCrpyQf7R_Tlucf9QKBI9Sv2IG6D-Q/viewform?usp=sf_link" target="_blank">Parent Permission Form</a>
     </div>
-    <footer>
-      <pre>         Made by: Mr. Simonsen     Computer Science Teacher     Nothern Utah Acadamey for Math, Engineering, and Science</pre>
-    </footer>
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+      <h3>Built by John Simonsen<br>Computer Science Teacher<br>Nothern Utah Acadamey for Math, Engineering, and Science</h3>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
+        <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+      </footer>
   </body>
 </html>

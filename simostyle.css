@@ -1,0 +1,15 @@
+#myHeader{
+  background-image: url("files/R2-3P0 concept.jpg");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body{
+  background-color:lightgrey;
+}
+.clamp{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.2em;
+}

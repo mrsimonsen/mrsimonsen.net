@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CyberPatriot</title>
-    <link href="style/jekyll-theme-hacker.css" rel="stylesheet">
-    <link href="style/index.css" rel="stylesheet">
-    <link href="files/Shell.ico" rel="icon" type="image">
-  </head>
-  <body>
-    <header>
-      <h1>Mr. Simonsen</h1>
-      <h2>For all your Computer Science needs</h2>
-    </header>
-    <nav>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="digital.html">Digital Media</a></li>
-      <li><a href="web-dev.html">Web Development</a></li>
-      <li><a href="game-dev.html">CS 1010 - Game Development Fundamentals</a></li>
-      <li><a href="python.html">CS 1030 - Computer Science Principles (Python)</a></li>
-      <li><a href="java.html">CS 1400 - Programming 1 (Java)</a></li>
-      <li><a class="active" href="cyberpatriot.html">CyberPatriot</a></li>
-      <li><a href="https://nuames.org" target="_blank">NUAMES</a></li>
-    </nav>
-    <div id="main_content">
-      <div class="column">
-        <h2>Ready to get started?</h2>
-        <a href="https://www.uscyberpatriot.org/competition/training-materials" target="_blank">CyberPatriot Training Materials</a>
-      </div>
-      <div class="column">
-        <h2>Resources</h2>
-        <a href="https://docs.google.com/a/mail.weber.edu/document/d/1YQ1jJYpA-v4fmk3Rtdvnj_Wxlb9bkIYjnZjRv7G_Hhk/edit?usp=sharing" target="_blank">Team Identifiers</a><br>
-        <a href="https://drive.google.com/file/d/0BwsCCN58DwDfREpfdVEtYWQ2Y0U/view" target="_blank">CISCO netacad.com Instructions</a><br>
-        <!--<a href="files/Semifinals.pdf" target="_blank"> Round PDF</a>-->
-      </div>
-      <h3>All competitions will be on Saturdays, 9am - 4pm in D13 - 213/212.<br>
-      Competitions are 6 hours long, plus setup/take down time.</h3>
-      <!--Compitition timeline-->
-      <table>
-        <caption><h3>CyperPatriot XI</h3></caption>
-        <tr>
-          <th>Round</th>
-          <th>Competition Date</th>
-          <th>Image 1</th>
-          <th>Image 2</th>
-          <th>Image 3</th>
-          <th>Image 4</th>
-          <th>CISCO</th>
-          <th>Packet Tracer</th>
-        </tr>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberPatriot</title>
+  <link href="files/logo.png" rel="icon" type="image">
+  <!--standard w3 css stylesheet-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!--my stylesheet-->
+  <script src="simoscript.js" defer></script>
+  <link rel="stylesheet" href="simostyle.css">
+</head>
+<body>
+  <!-- Side Navigation -->
+  <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none" id="mySidebar">
+    <h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
+    <button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i class="fas fa-times"></i></button>
+    <a href="index.html" class="w3-bar-item w3-button w3-text-theme">Home <i class="fa fa-home"></i></a>
+    <a href="classes.html" class="w3-bar-item w3-button w3-text-theme">My Classes <i id="icon" class="fas fa-graduation-cap"></i></a>
+    <a href="cyberpatriot.html" class="w3-bar-item w3-button w3-text-theme"><i class="fab fa-windows"></i> CyberPatriot <i class="fab fa-linux"></i></a>
+    <a href="https://nuames.org" class="w3-bar-item w3-button w3-text-theme">NUAMES <i class="fas fa-school"></i></a>
+    <!--<a href="simoblog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fas fa-microchip"></i> Hobbies <i class="fab fa-empire"></i></a>-->
+  </nav>
+  <!-- Header -->
+  <header class="w3-container w3-theme-dark w3-padding" id="myHeader">
+    <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
+    <div class="w3-center">
+      <span class="w3-xxxlarge w3-animate-bottom ">
+        <h1 class="w3-theme-dark">CyberPatriot</h1>
+        <br><br>
+        </span>
+    </div>
+  </header>
+  <div class="w3-container w3-theme-d5 w3-center">
+    <h2><a href="https://docs.google.com/a/mail.weber.edu/document/d/1YQ1jJYpA-v4fmk3Rtdvnj_Wxlb9bkIYjnZjRv7G_Hhk/edit?usp=sharing" target="_blank">Team Identifiers</a></h2>
+    <h3>All competitions will be on Saturdays, 9am - 4pm in D13 - 213/212.<br>
+    Competitions are 6 hours long, plus setup/take down time.</h3>
+  </div>
+  <!--Compitition timeline-->
+  <div class="w3-container">
+  <h3 class="w3-center w3-theme-dark">CyperPatriot XI</h3>
+  <div class="w3-responsive w3-card-4">
+      <table class="w3-table w3-stripped w3-border w3-theme">
+        <thread>
+          <tr class="w3-theme-dark">
+            <th>Round</th>
+            <th>Competition Date</th>
+            <th>Image 1</th>
+            <th>Image 2</th>
+            <th>Image 3</th>
+            <th>Image 4</th>
+            <th>CISCO</th>
+            <th>Packet Tracer</th>
+          </tr>
+        </thread>
         <tr>
           <td>Training Round</td>
           <td>9/6-10/4</td>
@@ -57,7 +66,7 @@
           <td>n/a</td>
           <td>n/a</td>
         </tr>
-        <tr>
+        <tr class="w3-theme-l1">
           <td>Practice Round</td>
           <td>10/10-10/22</td>
           <td>Windows 10 (answer key)</td>
@@ -77,7 +86,7 @@
           <td>Modules 3-7</td>
           <td>Modules 1-7</td>
         </tr>
-        <tr>
+        <tr class="w3-theme-l1">
           <td>Round 2</td>
           <td>12/8</td>
           <td>Windows 10</td>
@@ -97,7 +106,7 @@
           <td>Modules 13-15 (P/G), 3-7 (S)</td>
           <td>Modules 1-15 (P/G), 1-7 (S)</td>
         </tr>
-        <tr>
+        <tr class="w3-theme-l1">
           <td>Semifinal Round</td>
           <td>2/2</td>
           <td>Windows 8.1</td>
@@ -108,55 +117,73 @@
           <td>Modules 1-19 (P/G), 1-12 (S)</td>
         </tr>
       </table>
-      <hr>
-      <br>
-      <table>
-        <tr>
-          <th><h3>Round 1 Scores</h3></th>
-          <th>Images</th>
-          <th>CISCO/Packet</th>
-          <th>Total 220</th>
-          <th></th>
-        </tr>
+    </div>
+  </div><!--end schedule-->
+  <hr>
+  <h3 class="w3-center w3-theme-dark">Scores<br>Hover over team names to see rank in state</h3>
+  <div class="w3-container">
+    <h3 class="w3-center w3-theme">Round 1 Scores</h3>
+    <div class="w3-responsive w3-card-4">
+    <table class="w3-table w3-stripped w3-border w3-theme">
+        <thread>
+          <tr class="w3-theme-dark">
+            <th>Team</th>
+            <th>Images</th>
+            <th>CISCO/Packet</th>
+            <th>Total 220</th>
+            <th>State Tier</th>
+          </tr>
+        </thread>
         <tr title="Placed 2nd in State">
           <td>CyberSquid</td>
           <td>178</td>
           <td>15.59</td>
           <td>193.59</td>
+          <td>n/a</td>
         </tr>
-        <tr title="Placed 6th in State">
+        <tr title="Placed 6th in State" class="w3-theme-l1">
           <td>Freelancers</td>
           <td>147</td>
           <td>4.20</td>
           <td>151.20</td>
+          <td>n/a</td>
         </tr>
         <tr title="Placed 1st in State">
           <td>Pittsburg Steelixes</td>
           <td>183</td>
           <td>15.95</td>
           <td>198.95</td>
+          <td>n/a</td>
         </tr>
-        <tr title="Placed 4th in State">
+        <tr title="Placed 4th in State" class="w3-theme-l1">
           <td>Sardine Related</td>
           <td>162</td>
           <td>12.13</td>
           <td>174.13</td>
+          <td>n/a</td>
         </tr>
         <tr title="Placed 5th in State">
           <td>Soulless</td>
           <td>162</td>
           <td>7.48</td>
           <td>169.48</td>
+          <td>n/a</td>
         </tr>
       </table>
-      <table>
-        <tr>
-          <th><h3>Round 2 Scores</h3></th>
-          <th>Images</th>
-          <th>CISCO/Packet</th>
-          <th>Total 330</th>
-          <th>State Tier</th>
-        </tr>
+    </div><!--end round 1-->
+<hr>
+    <div class="w3-responsive w3-card-4">
+    <h3 class="w3-center w3-theme">Round 2 Scores</h3>
+    <table class="w3-table w3-stripped w3-border w3-theme">
+        <thread>
+          <tr class="w3-theme-dark">
+            <th>Team Name</th>
+            <th>Images</th>
+            <th>CISCO/Packet</th>
+            <th>Total 330</th>
+            <th>State Tier</th>
+          </tr>
+        </thread>
         <tr title="Placed 2nd in State">
           <td>CyberSquid</td>
           <td>188</td>
@@ -164,7 +191,7 @@
           <td>213.3</td>
           <td>Gold</td>
         </tr>
-        <tr title="Placed 9th in State">
+        <tr title="Placed 9th in State" class="w3-theme-l1">
           <td>Freelancers</td>
           <td>93</td>
           <td>3.6</td>
@@ -178,7 +205,7 @@
           <td>230.5</td>
           <td>Platinum</td>
         </tr>
-        <tr title="Placed 6th in State">
+        <tr title="Placed 6th in State" class="w3-theme-l1">
           <td>Sardine Related</td>
           <td>117</td>
           <td>13.9</td>
@@ -193,16 +220,60 @@
           <td>Gold</td>
         </tr>
       </table>
-      <img src="files/cpx_tiers.png" alt="CyberPatriot X tier selection">
-      <br>
-      <table>
-        <tr>
-          <th><h3>State Round Scores</h3></th>
-          <th>Images</th>
-          <th>CISCO/Packet</th>
-          <th>Total: 400</th>
-          <th>Semifinal Advancement</th>
-        </tr>
+    </div><!--end round 2-->
+<hr>
+<!-- modal state tier selection -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-theme-dark">
+      <span onclick="document.getElementById('id01').style.display='none'"
+      class="w3-button w3-display-topright">×</span>
+      <h5 style="text-align:center;">State Tier Placement</h5>
+    </header>
+    <div class="w3-padding w3-center">
+      <img src="files/cpx_tiers.png" alt="CyberPatriot tier selection">
+    </div>
+  </div>
+</div>
+<!-- modal semifinal advancement -->
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-theme-dark">
+      <span onclick="document.getElementById('id02').style.display='none'"
+      class="w3-button w3-display-topright">×</span>
+      <h5 style="text-align:center;">Semifinal Advancement & State Awards</h5>
+    </header>
+    <div class="w3-padding w3-center">
+      <img src="files/awards.png" alt="How to earn a State Award">
+    </div>
+  </div>
+</div>
+<!--image modal buttons-->
+    <div class="w3-center w3-row">
+      <div class="w3-half">
+        <div class="w3-padding-32">
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:500;">State Tier Placement</button>
+        </div>
+      </div>
+      <div class="w3-half">
+        <div class="w3-padding-32">
+          <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id02').style.display='block'" style="font-weight:500;">Semifinal Advancement & State Awards</button>
+        </div>
+      </div>
+    </div>
+<hr>
+    <div class="w3-responsive w3-card-4">
+      <h3 class="w3-center w3-theme">State Round Scores</h3>
+    <table class="w3-table w3-stripped w3-border w3-theme">
+        <thread>
+          <tr class="w3-theme-dark">
+            <th>Team Name</th>
+            <th>Images</th>
+            <th>CISCO/Packet</th>
+            <th>Total: 400</th>
+            <th>Semifinal Advancement</th>
+          </tr>
+        </thread>
         <tr title="Placed ?? in State">
           <td>CyberSquid</td>
           <td>?</td>
@@ -210,7 +281,7 @@
           <td>?</td>
           <td>?</td>
         </tr>
-        <tr title="Placed ?? in State">
+        <tr title="Placed ?? in State"  class="w3-theme-l1">
           <td>Freelancers</td>
           <td>?</td>
           <td>?</td>
@@ -224,7 +295,7 @@
           <td>?</td>
           <td>?</td>
         </tr>
-        <tr title="Placed ?? in State">
+        <tr title="Placed ?? in State" class="w3-theme-l1">
           <td>Sardine Related</td>
           <td>?</td>
           <td>?</td>
@@ -239,16 +310,19 @@
           <td>?</td>
         </tr>
       </table>
-      <img src="files/awards.png" alt="How to earn a State Award">
-      <br>
-      <table>
-        <tr>
-          <th><h3>Semifinals Scores</h3></th>
+    </div><!--end state scores-->
+<hr>
+<div class="w3-responsive w3-card-4">
+  <h3 class="w3-center w3-theme">Semifinal Scores</h3>
+<table class="w3-table w3-stripped w3-border w3-theme">
+    <thread>
+      <tr class="w3-theme-dark">
+          <th>Team Name</th>
           <th>Images</th>
           <th>CISCO/Packet</th>
           <th>Total: P-500, G/S-400</th>
-          <th></th>
         </tr>
+      </thread>
         <tr title="Rank">
           <td>?</td>
           <td>?</td>
@@ -256,9 +330,17 @@
           <td>?</td>
         </tr>
       </table>
-    </div>
-          <footer>
-        <pre>         Made by: Mr. Simonsen     Computer Science Teacher     Nothern Utah Acadamey for Math, Engineering, and Science</pre>
+    </div><!--end semifinal-->
+    <hr>
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-16">
+      <h3>Built by John Simonsen<br>Computer Science Teacher<br>Nothern Utah Acadamey for Math, Engineering, and Science</h3>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
+        <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
       </footer>
     </body>
   </html>
