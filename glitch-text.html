@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        background: #000;
+        font-family: 'Work Sans', sans-serif;
+        color: #fff;
+      }
+      #holder {
+        font-size: 6em;
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+      }
+      #glitch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background: url("glitch.png");
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="holder" onmouseover="glitch()">
+      <div id="glitch"></div>
+      WEB
+      <br> PRODUCT-
+      <br> ION
+    </div>
+    <script>
+      var gl = document.getElementById("glitch");
+      var over = false;
+
+      function glitch() {
+        if (over == false) {
+        gl.style.opacity = 1;
+        setTimeout(function() {
+        normal();
+        }, 1500);
+        }
+      }
+      function normal() {
+        gl.style.opacity = 0;
+      }
+    </script>
+  </body>
+</html>

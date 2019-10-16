@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
     <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
     <div class="w3-center">
       <span class="w3-xxxlarge w3-animate-bottom ">
-        <h1 class="w3-theme-dark"><i class="fab fa-empire"></i><i class="fas fa-store-alt"></i> Simonsen Hobbies <i class="fas fa-microchip"></i><i class="fas fa-flask"></i></h1>
+        <h1 class="w3-theme-dark"><i class="fab fa-empire"></i><i class="fas fa-store-alt"></i> Simonsen Hobbies <i class="fas fa-microchip"></i><i class="fas fa-fire"></i></h1>
         </span>
       <br><br>
     </div>
@@ -52,7 +52,8 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h5 class="w3-opacity">April 2, 2014</h5>
     </header>
     <div class="w3-container">
-      <!--full blog entry here, use javascript to fill modal-->
+      <!--115 characters to cutoff on one line, would like 4 line then cut off
+      also, it would be nice to have one place for the entry, then get the copy of what's needed to show up here-->
       <p class="clamp">Short Description of entry. Or first 4 lines of entry. Mauris neque quam, fermentum
         ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor
         magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.
@@ -107,57 +108,43 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- Posts -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
+      <h4>Tags</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
+        <i class="w3-left w3-margin-right fas fa-robot" style="width:50px"></i>
+        <span class="w3-large">Astromech</span><br>
+        <span>Count: </span>
       </li>
       <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
+        <i class="w3-left w3-margin-right fas fa-microchip" style="width:50px"></i>
+        <span class="w3-large">Computer Science</span><br>
+        <span>Count: </span>
       </li>
       <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
+        <i class="w3-left w3-margin-right fas fa-toolbox" style="width:50px"></i>
+        <span class="w3-large">DIY</span><br>
+        <span>Count: </span>
       </li>
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
+      <li class="w3-padding-16">
+        <i class="w3-left w3-margin-right fas fa-fire" style="width:50px"></i>
+        <span class="w3-large">Metalworking</span><br>
+        <span>Count: </span>
       </li>
+      <li class="w3-padding-16">
+        <i class="w3-left w3-margin-right fab fa-empire" style="width:50px"></i>
+        <span class="w3-large">Star Wars</span><br>
+        <span>Count: </span>
+      </li>
+      <li class="w3-padding-16">
+        <i class="w3-left w3-margin-right fas fa-tree" style="width:50px"></i>
+        <span class="w3-large">Woodworking</span><br>
+        <span>Count: </span>
+      </li>
+
     </ul>
   </div>
   <hr>
-
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p>
-      <span class="w3-tag w3-black w3-margin-bottom">Star Wars</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Astromech</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Cryptogrophy</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Python</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Arduio</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Robotics</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Computer Science</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Metal Casting</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Forge</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Video Games</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">D&D</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Woodworking</span>
-    </p>
-    </div>
-  </div>
 
 <!-- END Introduction Menu -->
 </div>
