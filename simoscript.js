@@ -26,9 +26,10 @@ function openClass(evt, course) {
     x[i].style.display = "none";
   }
   var activebtn = document.getElementsByClassName("testbtn");
-  for (i = 0; i < x.length; i++) {
-    activebtn[i].className = activebtn[i].className.replace(" w3-black", "");
+  for (i = 0; i < activebtn.length; i++){
+    activebtn.item(i).className = activebtn.item(i).className.replace(" w3-black", "");
   }
+
   document.getElementById(course).style.display = "block";
   evt.currentTarget.className += " w3-black";
 }
