@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mr. Simonsen's Classroom</title>
+	<title>Mr. Simonsen</title>
 	<link href="files/logo.png" rel="icon" type="image">
 	<!--standard w3 css stylesheet-->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -30,15 +30,42 @@
 		<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
 		<div class="w3-center">
 			<span class="w3-xxxlarge w3-animate-bottom ">
-				<h1 class="w3-theme-dark">Mr. Simonsen</h1>
+				<h1 class="w3-theme-dark">John Simonsen</h1>
 			</span>
 			<br><br>
 		</div>
 	</header>
 	<!--Content-->
-	<article>
-		<h2 class="w3-center">Under Construction</h2>
-		<p class="w3-center">Currently changing careers</p>
+	<article class="w3-container w3-padding">
+		<h3 class="w3-center">Ask a question about MLOps, AI, and cloud tools</h3>
+		<div class="w3-card-3 w3-margin w3-white">
+			<div class="w3-container w3-padding">
+				<form id="qa-form">
+					<div class="w3-padding">
+						<label for="question">
+							<h3>Your Question:</h3>
+						</label>
+						<input class="w3-input w3-border" type="text" id="question" name="question" required>
+					</div>
+					<div class="w3-padding">
+						<button class="w3-button w3-theme-d2 w3-right" type="submit">Ask</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="w3-card-4 w3-margin w3-white">
+			<header class="w3-container w3-theme-dark">
+				<h3>Answer:</h3>
+			</header>
+			<div class="w3-container w3-padding">
+				<p id="answer">The answer will appear here.</p>
+				<div id="sources-container" style="display:none">
+					<h4>Sources:</h4>
+					<ul id="sources" class="we-ul">
+					</ul>
+				</div>
+			</div>
+		</div>
 	</article>
 	<!-- Footer -->
 	<footer class="w3-container w3-theme-dark w3-padding-16">
@@ -52,6 +79,51 @@
 					<i class="fa fa-chevron-circle-up"></i></span></a>
 		</div>
 	</footer>
+
+	<script>
+		document.getElementById('qa-form').addEventListener('submit', async function (event) {
+			event.preventDefault();
+
+			const question = document.getElementById('question').value;
+			const answerP = document.getElementById('answer');
+			const sourcesContainer = document.getElementById('sources-container');
+			const sourcesUl = document.getElementById('sources');
+
+			answerP.textContent = 'Loading...';
+			sourcesUl.innerHTML = '';
+			sourcesContainer.style.display = 'none';
+
+			try {
+				const response = await fetch('http://localhost:8000/query', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ question: question })
+				});
+
+				if (!response.ok) {
+					throw new Error('HTTP error! status: ${response.status}')
+				}
+
+				const data = await response.json();
+				answerP.textContent = data.answer;
+
+				if (data.source_documents && data.source_documents.length > 0) {
+					data.source_documents.forEach(source => {
+						const li = document.createElement('li');
+						li.className = 'w3-padding-small';
+						li.textContent = source.replace('processed_', '').replace('.txt', '')
+						sourcesUl.appendChild(li);
+					});
+					sourcesContainer.style.display = 'block';
+				}
+			} catch (error) {
+				answerP.textContent = 'Failed to get an answer. The local server may not be running. Please try again later.'
+				console.error('Error: ', error)
+			}
+		});
+	</script>
 </body>
 
 </html>
