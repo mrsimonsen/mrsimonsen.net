@@ -18,19 +18,3 @@ function w3_open() {
 function w3_close() {
 	document.getElementById("mySidebar").style.display = "none";
 }
-// Tabs
-function openClass(evt, course) {
-	var i;
-	var x = document.getElementsByClassName("course");
-	for (i = 0; i < x.length; i++) {
-		x[i].style.display = "none";
-	}
-	var activebtn = document.getElementsByClassName("testbtn");
-	for (i = 0; i < activebtn.length; i++) {
-		activebtn.item(i).className = activebtn.item(i).className.replace(" w3-black", "");
-	}
-
-	document.getElementById(course).style.display = "block";
-	evt.currentTarget.className += " w3-black";
-}
-
