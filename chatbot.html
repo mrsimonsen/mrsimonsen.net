@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MLOps Chatbot Demo - John Simonsen</title>
+	<link href="files/logo.png" rel="icon" type="image">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="modern-portfolio.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="container nav-content">
+			<div class="logo">MLOps Q&A Demo</div>
+			<ul class="nav-links" style="display: flex;">
+				<li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main class="chat-container">
+		<header style="text-align: center; margin-bottom: 30px;">
+			<h1>Ask a question about MLOps, AI, and cloud tools</h1>
+			<p>Note: The backend service may be offline to save costs. Contact me if you want to arrange a live demo.
+			</p>
+		</header>
+
+		<div class="card">
+			<h3>Submit a Query</h3>
+			<form id="qa-form">
+				<div class="form-group">
+					<label for="question">Your Question:</label>
+					<input type="text" id="question" name="question"
+						placeholder="e.g., What is the difference between MLflow and ZenML?" required>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary">Ask Question</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="card">
+			<h3>Answer</h3>
+			<p id="answer">The answer will appear here.</p>
+			<div id="sources-container" style="display:none; margin-top: 20px;">
+				<h4>Sources:</h4>
+				<ul id="sources">
+				</ul>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container footer-content">
+			<p>John Simonsen Portfolio | 2025</p>
+			<div class="footer-links">
+				<a href="https://github.com/mrsimonsen/" target="_blank">GitHub</a>
+				<a href="https://linkedin.com/in/john-simonsen/" target="_blank">LinkedIn</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Keep the original JavaScript functionality
+		document.getElementById('qa-form').addEventListener('submit', async function (event) {
+			event.preventDefault();
+
+			const question = document.getElementById('question').value;
+			const answerP = document.getElementById('answer');
+			const sourcesContainer = document.getElementById('sources-container');
+			const sourcesUl = document.getElementById('sources');
+
+			answerP.textContent = 'Loading...';
+			sourcesUl.innerHTML = '';
+			sourcesContainer.style.display = 'none';
+
+			try {
+				// NOTE: Update the fetch URL if your deployment endpoint changes
+				const response = await fetch('http://localhost:8000/query', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ question: question })
+				});
+
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`)
+				}
+
+				const data = await response.json();
+				answerP.textContent = data.answer;
+
+				if (data.source_documents && data.source_documents.length > 0) {
+					data.source_documents.forEach(source => {
+						const li = document.createElement('li');
+						li.textContent = source.replace('processed_', '').replace('.txt', '')
+						sourcesUl.appendChild(li);
+					});
+					sourcesContainer.style.display = 'block';
+				}
+			} catch (error) {
+				answerP.textContent = 'Failed to get an answer. The local server may not be running or the endpoint is incorrect. Please try again later.'
+				console.error('Error: ', error)
+			}
+		});
+	</script>
+</body>
+
+</html>
