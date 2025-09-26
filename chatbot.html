@@ -1,87 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mr. Simonsen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MLOps Chatbot Demo - John Simonsen</title>
 	<link href="files/logo.png" rel="icon" type="image">
-	<!--standard w3 css stylesheet-->
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	<!--my stylesheet-->
-	<script src="simoscript.js" defer></script>
-	<link rel="stylesheet" href="simostyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="modern-portfolio.css">
 </head>
 
 <body>
-	<!-- Side Navigation -->
-	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none"
-		id="mySidebar">
-		<h1 class="w3-xxxlarge w3-text-theme">Side Navigation</h1>
-		<button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i
-				class="fas fa-times"></i></button>
-		<!--<a href="simoblog.html" class="w3-bar-item w3-button w3-text-theme"><i class="fas fa-microchip"></i> Hobbies <i class="fab fa-empire"></i></a>-->
+	<nav class="navbar">
+		<div class="container nav-content">
+			<div class="logo">MLOps Q&A Demo</div>
+			<ul class="nav-links" style="display: flex;">
+				<li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a></li>
+			</ul>
+		</div>
 	</nav>
-	<!-- Header -->
-	<header class="w3-container w3-theme-dark w3-padding" id="myHeader">
-		<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
-		<div class="w3-center">
-			<span class="w3-xxxlarge w3-animate-bottom ">
-				<h1 class="w3-theme-dark">John Simonsen</h1>
-			</span>
-			<br><br>
-		</div>
-	</header>
-	<!--Content-->
-	<article class="w3-container w3-padding">
-		<h3 class="w3-center">Ask a question about MLOps, AI, and cloud tools</h3>
-		<p>Bot will most likely be offline, to save costs. Contact me if you want to see a demo.</p>
-		<div class="w3-card-3 w3-margin w3-white">
-			<div class="w3-container w3-padding">
-				<form id="qa-form">
-					<div class="w3-padding">
-						<label for="question">
-							<h3>Your Question:</h3>
-						</label>
-						<input class="w3-input w3-border" type="text" id="question" name="question" required>
-					</div>
-					<div class="w3-padding">
-						<button class="w3-button w3-theme-d2 w3-right" type="submit">Ask</button>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="w3-card-4 w3-margin w3-white">
-			<header class="w3-container w3-theme-dark">
-				<h3>Answer:</h3>
-			</header>
-			<div class="w3-container w3-padding">
-				<p id="answer">The answer will appear here.</p>
-				<div id="sources-container" style="display:none">
-					<h4>Sources:</h4>
-					<ul id="sources" class="we-ul">
-					</ul>
+
+	<main class="chat-container">
+		<header style="text-align: center; margin-bottom: 30px;">
+			<h1>Ask a question about MLOps, AI, and cloud tools</h1>
+			<p>Note: The backend service may be offline to save costs. Contact me if you want to arrange a live demo.
+			</p>
+		</header>
+
+		<div class="card">
+			<h3>Submit a Query</h3>
+			<form id="qa-form">
+				<div class="form-group">
+					<label for="question">Your Question:</label>
+					<input type="text" id="question" name="question"
+						placeholder="e.g., What is the difference between MLflow and ZenML?" required>
 				</div>
+				<div>
+					<button type="submit" class="btn btn-primary">Ask Question</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="card">
+			<h3>Answer</h3>
+			<p id="answer">The answer will appear here.</p>
+			<div id="sources-container" style="display:none; margin-top: 20px;">
+				<h4>Sources:</h4>
+				<ul id="sources">
+				</ul>
 			</div>
 		</div>
-	</article>
-	<!-- Footer -->
-	<footer class="w3-container w3-theme-dark w3-padding-16">
-		<h3>Built by John Simonsen <a href="https://linkedin.com/in/john-simonsen">LinkedIn</a><br>Bachelors of Science,
-			Technology and Engineering Education<br>Master of Science,
-			Data Analytics - Data Science</h3>
-		<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-		<div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-			<span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
-			<a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
-					<i class="fa fa-chevron-circle-up"></i></span></a>
+	</main>
+
+	<footer>
+		<div class="container footer-content">
+			<p>John Simonsen Portfolio | 2025</p>
+			<div class="footer-links">
+				<a href="https://github.com/mrsimonsen/" target="_blank">GitHub</a>
+				<a href="https://linkedin.com/in/john-simonsen/" target="_blank">LinkedIn</a>
+			</div>
 		</div>
 	</footer>
 
 	<script>
+		// Keep the original JavaScript functionality
 		document.getElementById('qa-form').addEventListener('submit', async function (event) {
 			event.preventDefault();
 
@@ -95,6 +78,7 @@
 			sourcesContainer.style.display = 'none';
 
 			try {
+				// NOTE: Update the fetch URL if your deployment endpoint changes
 				const response = await fetch('http://localhost:8000/query', {
 					method: 'POST',
 					headers: {
@@ -113,14 +97,13 @@
 				if (data.source_documents && data.source_documents.length > 0) {
 					data.source_documents.forEach(source => {
 						const li = document.createElement('li');
-						li.className = 'w3-padding-small';
 						li.textContent = source.replace('processed_', '').replace('.txt', '')
 						sourcesUl.appendChild(li);
 					});
 					sourcesContainer.style.display = 'block';
 				}
 			} catch (error) {
-				answerP.textContent = 'Failed to get an answer. The local server may not be running. Please try again later.'
+				answerP.textContent = 'Failed to get an answer. The local server may not be running or the endpoint is incorrect. Please try again later.'
 				console.error('Error: ', error)
 			}
 		});

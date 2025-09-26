@@ -6,358 +6,280 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>John Simonsen - Data Science & MLOps Portfolio</title>
 	<link href="files/logo.png" rel="icon" type="image">
-
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="simostyle.css">
-	<style>
-		/* Improve list readability within cards */
-		.w3-ul li {
-			padding: 8px 0;
-		}
-	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="modern-portfolio.css">
 </head>
 
 <body>
-	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none"
-		id="mySidebar">
-		<h1 class="w3-xxlarge w3-text-theme">Navigation</h1>
-		<button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i
-				class="fas fa-times"></i></button>
-		<a href="#profile" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
-				class="fas fa-user-circle"></i> Profile</a>
-		<a href="#skills" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i class="fas fa-cogs"></i>
-			Skills</a>
-		<a href="#projects" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
-				class="fas fa-laptop-code"></i> Projects</a>
-		<a href="#experience" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
-				class="fas fa-briefcase"></i> Experience</a>
-		<a href="#education" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
-				class="fas fa-graduation-cap"></i> Education</a>
-		<a href="chatbot.html" class="w3-bar-item w3-button w3-text-theme w3-border-top"><i class="fas fa-robot"></i>
-			Chatbot Demo</a>
-	</nav>
-
-	<header class="w3-container w3-theme-dark w3-padding" id="myHeader">
-		<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
-		<div class="w3-center w3-padding-32">
-			<span class="w3-xxxlarge w3-animate-bottom ">
-				<h1 class="w3-theme-dark w3-padding">John Simonsen</h1>
-			</span>
-			<h4 class="w3-theme-dark w3-padding">Data Science & MLOps Specialist</h4>
-			<br>
+	<header id="myHeader">
+		<div class="header-overlay">
+			<div class="container header-content">
+				<h1>John Simonsen</h1>
+				<p>Data Science & MLOps Specialist</p>
+			</div>
 		</div>
 	</header>
 
-	<div class="w3-container w3-content" style="max-width:1200px;margin-top:40px">
-
-		<div id="profile" class="w3-row w3-margin-bottom">
-			<div class="w3-card-4 w3-white w3-padding-large">
-				<div class="w3-row">
-					<div class="w3-col m3 l2 w3-center w3-padding">
-						<img src="files/Simonsen.png" alt="John Simonsen Headshot"
-							style="width:100%; max-width: 150px; border-radius: 50%; border: 4px solid #616161; background-color: #ddd;"
-							onerror="this.alt='Headshot Placeholder'">
-						<p>Conifer, CO</p>
-					</div>
-					<div class="w3-col m9 l10 w3-padding">
-						<h2>Professional Summary</h2>
-						<p>Master's Graduate in Data Science specializing in MLOps and the end-to-end machine learning
-							lifecycle. My expertise is demonstrated through developing a complete RAG-based Q&A
-							application, from data ingestion and containerization to deployment on Kubernetes. I have
-							authored deployment blueprints for AWS using Terraform and created CI/CD pipelines with
-							GitHub Actions to ensure robust, automated workflows. Combining these advanced MLOps skills
-							with a decade of experience in systems administration, I am well-equipped to build, scale,
-							and maintain reliable AI/ML solutions.</p>
-
-						<div class="w3-section">
-							<a href="https://github.com/mrsimonsen/" target="_blank"
-								class="w3-button w3-theme-d2 w3-margin-right"><i class="fab fa-github"></i> GitHub</a>
-							<a href="https://linkedin.com/in/john-simonsen/" target="_blank"
-								class="w3-button w3-theme-d2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-						</div>
-					</div>
-				</div>
-			</div>
+	<nav class="navbar">
+		<div class="container nav-content">
+			<div class="logo">JS Portfolio</div>
+			<button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+				<i class="fa fa-bars"></i>
+			</button>
+			<ul class="nav-links" id="navMenu">
+				<li><a href="#profile" onclick="closeNav()">Profile</a></li>
+				<li><a href="#skills" onclick="closeNav()">Skills</a></li>
+				<li><a href="#projects" onclick="closeNav()">Projects</a></li>
+				<li><a href="#experience" onclick="closeNav()">Experience</a></li>
+				<li><a href="chatbot.html" class="nav-special">Chatbot Demo</a></li>
+			</ul>
 		</div>
+	</nav>
 
-		<div id="skills" class="w3-row w3-margin-top w3-padding-large">
-			<h2 class="w3-center">Technical Skills</h2>
-			<div class="w3-row-padding">
-
-				<div class="w3-col l4 m6 w3-margin-bottom">
-					<div class="w3-card w3-white">
-						<header class="w3-container w3-theme">
-							<h4>AI / Machine Learning</h4>
-						</header>
-						<div class="w3-container w3-padding">
-							<p>PyTorch, Scikit-learn, NLTK, Regression, Classification, Clustering, Time Series, NLP,
-								Neural Networks (CNN, RNN/LSTM), RAG, LLMs (Ollama), LangChain</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w3-col l4 m6 w3-margin-bottom">
-					<div class="w3-card w3-white">
-						<header class="w3-container w3-theme">
-							<h4>Languages</h4>
-						</header>
-						<div class="w3-container w3-padding">
-							<p>Python, SQL (PostgreSQL, MySQL, SQLite), Java, C++, Bash, HTML/CSS, JavaScript</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w3-col l4 m6 w3-margin-bottom">
-					<div class="w3-card w3-white">
-						<header class="w3-container w3-theme">
-							<h4>MLOps & Deployment</h4>
-						</header>
-						<div class="w3-container w3-padding">
-							<p>MLflow, DVC, Git, CI/CD (GitHub Actions, GitLab), FastAPI</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w3-col l4 m6 w3-margin-bottom">
-					<div class="w3-card w3-white">
-						<header class="w3-container w3-theme">
-							<h4>Cloud & Infrastructure</h4>
-						</header>
-						<div class="w3-container w3-padding">
-							<p>AWS (EKS, ECR, S3), Kubernetes, Docker, Terraform (IaC), Linux (Ubuntu)</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="w3-col l4 m6 w3-margin-bottom">
-					<div class="w3-card w3-white">
-						<header class="w3-container w3-theme">
-							<h4>Databases & Tools</h4>
-						</header>
-						<div class="w3-container w3-padding">
-							<p>ChromaDB (Vector DB), PostgreSQL, MySQL, SQLite, Tableau, Seaborn</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div id="projects" class="w3-row w3-margin-top w3-padding-large">
-			<h2 class="w3-center">Projects & Portfolio</h2>
-
-			<div class="w3-card-4 w3-white w3-margin-bottom">
-				<header class="w3-container w3-theme">
-					<h3>MLOps Stack Q&A Bot | End-to-end RAG Application</h3>
-				</header>
-				<div class="w3-container w3-padding-large">
-					<ul class="w3-ul">
-						<li>Developed a Retrieval-Augmented Generation (RAG) application designed to answer questions
-							about MLOps tools (ZenML, MLflow, Docker, etc.) by utilizing official documentation.</li>
-						<li>Engineered a data ingestion pipeline involving web scraping, text cleaning, chunking,
-							embedding generation (using Ollama), and storage in a ChromaDB vector database.</li>
-						<li>Built and containerized a RESTful API using FastAPI and Docker, and integrated it with a
-							front-end web interface (HTML/JavaScript).</li>
-						<li>Implemented comprehensive unit and integration testing using Pytest.</li>
-						<li>Deployed the containerized application on a local Kubernetes cluster.</li>
-						<li>Authored a complete blueprint for cloud deployment, including Terraform configuration for
-							AWS (EKS, ECR, S3) and a CI/CD pipeline using GitHub Actions.</li>
-					</ul>
-					<div class="w3-padding">
-						<a href="https://github.com/mrsimonsen/mlops_qa_bot" target="_blank"
-							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
-						<a href="chatbot.html"
-							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme w3-margin-left">Live Demo
-							Page</a>
+	<main class="container">
+		<section id="profile" class="card">
+			<div class="profile-content">
+				<img src="files/Simonsen.png" alt="John Simonsen Headshot" class="headshot"
+					onerror="this.alt='Headshot Placeholder'">
+				<div class="bio">
+					<h2>Professional Summary</h2>
+					<p class="location"><i class="fas fa-map-marker-alt"></i> Conifer, CO</p>
+					<p>Master's Graduate in Data Science specializing in MLOps and the end-to-end machine learning
+						lifecycle. My expertise is demonstrated through developing a complete RAG-based Q&A application,
+						from data ingestion and containerization to deployment on Kubernetes. I have authored deployment
+						blueprints for AWS using Terraform and created CI/CD pipelines with GitHub Actions to ensure
+						robust, automated workflows. Combining these advanced MLOps skills with a decade of experience
+						in systems administration, I am well-equipped to build, scale, and maintain reliable AI/ML
+						solutions.</p>
+					<div class="social-links">
+						<a href="https://github.com/mrsimonsen/" target="_blank" class="btn btn-primary"><i
+								class="fab fa-github"></i> GitHub</a>
+						<a href="https://linkedin.com/in/john-simonsen/" target="_blank" class="btn btn-secondary"><i
+								class="fab fa-linkedin"></i> LinkedIn</a>
 					</div>
 				</div>
 			</div>
+		</section>
 
-			<div class="w3-card-4 w3-white w3-margin-bottom">
-				<header class="w3-container w3-theme">
-					<h3>Flight Delay Predictor | MLOps, CI/CD & Model Deployment</h3>
-				</header>
-				<div class="w3-container w3-padding-large">
-					<ul class="w3-ul">
-						<li>Developed and deployed a machine learning model for predicting flight delays using Python,
-							FastAPI, Docker, and MLflow.</li>
-						<li>Utilized MLflow for model tracking, versioning, and deployment.</li>
-						<li>Implemented a CI/CD pipeline using GitLab to automate the testing (Pytest) and deployment
-							process.</li>
-						<li>Developed a well-documented API service using FastAPI, containerized with Docker to ensure
-							reproducible deployments.</li>
-					</ul>
-					<div class="w3-padding">
-						<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D602" target="_blank"
-							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
+		<section id="skills">
+			<h2 class="section-title">Technical Skills</h2>
+			<div class="card">
+				<div class="skill-category">
+					<h3>AI / Machine Learning</h3>
+					<div class="tags">
+						<span class="skill-tag">PyTorch</span>
+						<span class="skill-tag">Scikit-learn</span>
+						<span class="skill-tag">NLTK</span>
+						<span class="skill-tag">LangChain</span>
+						<span class="skill-tag">LLMs (Ollama)</span>
+						<span class="skill-tag">RAG</span>
+						<span class="skill-tag">Neural Networks (CNN, LSTM)</span>
+						<span class="skill-tag">NLP</span>
+						<span class="skill-tag">Time Series</span>
+						<span class="skill-tag">Regression</span>
+						<span class="skill-tag">Classification</span>
+						<span class="skill-tag">Clustering</span>
+					</div>
+				</div>
+				<hr>
+				<div class="skill-category">
+					<h3>MLOps, Cloud & Infrastructure</h3>
+					<div class="tags">
+						<span class="skill-tag">AWS (EKS, ECR, S3)</span>
+						<span class="skill-tag">Kubernetes</span>
+						<span class="skill-tag">Docker</span>
+						<span class="skill-tag">Terraform (IaC)</span>
+						<span class="skill-tag">CI/CD (GitHub Actions, GitLab)</span>
+						<span class="skill-tag">MLflow</span>
+						<span class="skill-tag">DVC</span>
+						<span class="skill-tag">FastAPI</span>
+						<span class="skill-tag">Linux (Ubuntu)</span>
+					</div>
+				</div>
+				<hr>
+				<div class="skill-category">
+					<h3>Languages & Databases</h3>
+					<div class="tags">
+						<span class="skill-tag">Python</span>
+						<span class="skill-tag">SQL</span>
+						<span class="skill-tag">ChromaDB (Vector DB)</span>
+						<span class="skill-tag">PostgreSQL</span>
+						<span class="skill-tag">MySQL</span>
+						<span class="skill-tag">Bash</span>
+						<span class="skill-tag">Java</span>
+						<span class="skill-tag">C++</span>
+						<span class="skill-tag">HTML/CSS/JS</span>
 					</div>
 				</div>
 			</div>
+		</section>
 
-			<div class="w3-card-4 w3-white w3-margin-bottom">
-				<header class="w3-container w3-theme">
-					<h3>Customer Sentiment Analysis | NLP & LSTM Networks</h3>
-				</header>
-				<div class="w3-container w3-padding-large">
-					<ul class="w3-ul">
-						<li>Developed and trained an LSTM neural network model using PyTorch to classify customer
-							sentiment from product and service reviews.</li>
-						<li>Implemented text data preparation pipeline including cleaning, tokenization (NLTK),
-							lemmatization, padding, and stratified splitting.</li>
-						<li>Employed techniques like embedding layers, dropout regularization, and early stopping to
-							mitigate overfitting.</li>
-						<li>Validated the model's predictive capability on a held-out test set.</li>
-					</ul>
-					<div class="w3-padding">
-						<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D604/Task2" target="_blank"
-							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<section id="projects">
+			<h2 class="section-title">Projects & Portfolio</h2>
 
-		<div id="experience" class="w3-row w3-margin-top w3-padding-large">
-			<h2 class="w3-center">Professional Experience</h2>
-
-			<div class="w3-card w3-white w3-margin-bottom">
-				<div class="w3-container w3-padding-large">
-					<h3 class="w3-opacity"><b>AI Trainer</b></h3>
-					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>2024 - Present
-					</h4>
-					<p><i>Alignerr (Remote) & DataAnnotation (Remote)</i></p>
-					<hr>
-					<ul class="w3-ul">
-						<li>Contribute to specialized AI model evaluation projects, assessing capabilities in code
-							generation, technical problem-solving, and multi-language instruction adherence to refine
-							model performance.</li>
-						<li>Perform comparative analysis on AI model variations by evaluating side-by-side outputs to
-							guide development and enhance user interaction quality.</li>
-						<li>Provide detailed feedback on AI-generated code and technical outputs, identifying errors and
-							logical flaws to improve model reasoning, accuracy, and robustness.</li>
-						<li>Leverage various Generative AI tools to supplement and accelerate the analysis and
-							evaluation of technical and conversational model outputs.</li>
-					</ul>
+			<div class="card">
+				<h3>MLOps Stack Q&A Bot | End-to-end RAG Application</h3>
+				<ul>
+					<li>Developed a Retrieval-Augmented Generation (RAG) application designed to answer questions about
+						MLOps tools (ZenML, MLflow, Docker, etc.) by utilizing official documentation.</li>
+					<li>Engineered a data ingestion pipeline involving web scraping, embedding generation (using
+						Ollama), and storage in a ChromaDB vector database.</li>
+					<li>Built and containerized a RESTful API using FastAPI and Docker, and integrated it with a
+						front-end web interface.</li>
+					<li>Deployed the containerized application on a local Kubernetes cluster for development and
+						testing.</li>
+					<li>Authored a complete blueprint for cloud deployment, including Terraform configuration for AWS
+						(EKS, ECR, S3) and a CI/CD pipeline using GitHub Actions.</li>
+				</ul>
+				<div class="project-links">
+					<a href="https://github.com/mrsimonsen/mlops_qa_bot" target="_blank" class="btn-outline">View on
+						GitHub</a>
 				</div>
 			</div>
 
-			<div class="w3-card w3-white w3-margin-bottom">
-				<div class="w3-container w3-padding-large">
-					<h3 class="w3-opacity"><b>Systems Administrator & Technical Instructor</b></h3>
-					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>2016 - 2023</h4>
-					<p><i>Northern Utah Academy for Math, Engineering, and Science (Layton, UT)</i></p>
-					<hr>
-					<ul class="w3-ul">
-						<li>System Administration & User Support: Administered and maintained a 28-workstation Ubuntu
-							lab, managing all aspects including software/system updates, user account provisioning, and
-							remote troubleshooting.</li>
-						<li>Automation & Tool Development: Developed and deployed numerous automation scripts (Bash,
-							Python) and CI/CD pipelines (GitHub Actions) to streamline classroom operations, including
-							automated grading and system imaging.</li>
-						<li>Managed, mentored, and led student teams in the CyberPatriot National Youth Cyber Defense
-							Competition for five years, consistently achieving top rankings (1st-3rd) in state
-							competitions.</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div id="education" class="w3-row w3-margin-top w3-padding-large">
-			<h2 class="w3-center">Education</h2>
-
-			<div class="w3-card w3-white w3-margin-bottom">
-				<div class="w3-container w3-padding-large">
-					<h3 class="w3-opacity"><b>Master of Science in Data Analytics - Data Science</b></h3>
-					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>APRIL 2025</h4>
-					<p><i>Western Governors University</i></p>
-					<hr>
-					<button onclick="document.getElementById('courseworkModal').style.display='block'"
-						class="w3-button w3-theme-d2">View Graduate Coursework Highlights</button>
+			<div class="card">
+				<h3>Flight Delay Predictor | MLOps, CI/CD & Model Deployment</h3>
+				<ul>
+					<li>Developed and deployed a machine learning model for predicting flight delays using Python,
+						FastAPI, Docker, and MLflow.</li>
+					<li>Utilized MLflow for model tracking, versioning, and deployment, showcasing experience with a
+						leading MLOps platform.</li>
+					<li>Implemented a CI/CD pipeline using GitLab to automate the testing (Pytest) and deployment
+						process.</li>
+				</ul>
+				<div class="project-links">
+					<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D602" target="_blank"
+						class="btn-outline">View on GitHub</a>
 				</div>
 			</div>
 
-			<div class="w3-card w3-white w3-margin-bottom">
-				<div class="w3-container w3-padding-large">
-					<h3 class="w3-opacity"><b>Bachelor of Science in Technology and Engineering Education</b></h3>
-					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>MAY 2015</h4>
-					<p><i>Utah State University</i></p>
+			<div class="card">
+				<h3>Customer Sentiment Analysis | NLP & LSTM Networks</h3>
+				<ul>
+					<li>Developed and trained an LSTM neural network model using PyTorch to classify customer sentiment
+						from product and service reviews.</li>
+					<li>Implemented text data preparation pipeline including cleaning, tokenization (NLTK),
+						lemmatization, and padding.</li>
+					<li>Employed techniques like embedding layers, dropout regularization, and early stopping to
+						mitigate overfitting.</li>
+				</ul>
+				<div class="project-links">
+					<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D604/Task2" target="_blank"
+						class="btn-outline">View on GitHub</a>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div id="awards" class="w3-row w3-margin-top w3-padding-large w3-margin-bottom">
-			<h2 class="w3-center">Awards and Recognition</h2>
-			<div class="w3-card w3-white w3-margin-bottom">
-				<div class="w3-container w3-padding-large">
-					<ul class="w3-ul">
-						<li>Eagle Scout Award with Bronze Palm</li>
-						<li>Winner, Northrup Grumman Coding Challenge, Center for Excellence Open House, Hill Air Force
-							Base</li>
-					</ul>
+		<section id="experience">
+			<h2 class="section-title">Professional Experience</h2>
+
+			<div class="card">
+				<div class="item-header">
+					<h3>AI Trainer</h3>
+					<span class="dates">2024 - Present</span>
 				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<div id="courseworkModal" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:800px">
-			<header class="w3-container w3-theme-dark">
-				<span onclick="document.getElementById('courseworkModal').style.display='none'"
-					class="w3-button w3-display-topright">&times;</span>
-				<h2>MSDA Graduate Coursework</h2>
-			</header>
-			<div class="w3-container w3-padding-large">
-				<p>Code and documentation can be explored in the <a
-						href="https://github.com/mrsimonsen/MSDADS-course-work" target="_blank"
-						class="w3-text-theme">MSDA Graduate Coursework Repository</a>.</p>
-				<ul class="w3-ul w3-border">
-					<li><strong>D604: Advanced Analytics:</strong> Neural networks, deep learning (PyTorch), NLP,
-						computer vision, sentiment analysis.</li>
-					<li><strong>D603: Machine Learning:</strong> Supervised (k-NN, SVMs, decision trees), unsupervised
-						(k-means, t-SNE), ensemble methods, and time series forecasting.</li>
-					<li><strong>D600: Statistical Data Mining:</strong> Regression (linear and logistic), dimensionality
-						reduction (PCA).</li>
-					<li><strong>D602: Deployment:</strong> Operationalization, scalable data product pipelines,
-						deployment at scale.</li>
-					<li><strong>D605: Optimization:</strong> Linear optimization (Python), gradient and
-						non-gradient-based algorithms.</li>
-					<li><strong>D606: Data Science Capstone:</strong> End-to-end project development and implementation.
-					</li>
-					<li><strong>D601: Data Storytelling:</strong> Data visualization, interactive dashboards, tailored
-						communication.</li>
-					<li><strong>D597: Data Management:</strong> Relational (SQL) and non-relational databases, data
-						modeling.</li>
+				<p class="organization">Alignerr (Remote) & DataAnnotation (Remote)</p>
+				<ul>
+					<li>Contribute to specialized AI model evaluation projects, assessing capabilities in code
+						generation, technical problem-solving, and multi-language instruction adherence to refine model
+						performance.</li>
+					<li>Perform comparative analysis on AI model variations by evaluating side-by-side outputs to guide
+						development and enhance user interaction quality.</li>
+					<li>Provide detailed feedback on AI-generated code and technical outputs, identifying errors and
+						logical flaws to improve model reasoning, accuracy, and robustness.</li>
 				</ul>
 			</div>
-		</div>
-	</div>
 
-	<footer class="w3-container w3-theme-dark w3-padding-16">
-		<h3>John Simonsen Portfolio | 2025</h3>
-		<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-		<div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-			<span class="w3-text w3-theme-light w3-padding">Go To Top</span>
-			<a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
-					<i class="fa fa-chevron-circle-up"></i></span></a>
+			<div class="card">
+				<div class="item-header">
+					<h3>Systems Administrator & Technical Instructor</h3>
+					<span class="dates">2016 - 2023</span>
+				</div>
+				<p class="organization">Northern Utah Academy for Math, Engineering, and Science (Layton, UT)</p>
+				<ul>
+					<li>System Administration: Administered and maintained a 28-workstation Ubuntu lab, managing
+						updates, user provisioning, and troubleshooting.</li>
+					<li>Automation & Tool Development: Developed automation scripts (Bash, Python) and CI/CD pipelines
+						(GitHub Actions) to streamline classroom operations, including automated grading and system
+						imaging.</li>
+					<li>Mentorship: Led student teams in the CyberPatriot competition for five years, consistently
+						achieving top rankings (1st-3rd) in state competitions.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="education">
+			<h2 class="section-title">Education & Awards</h2>
+
+			<div class="card">
+				<div class="item-header">
+					<h3>Master of Science in Data Analytics - Data Science</h3>
+					<span class="dates">APRIL 2025</span>
+				</div>
+				<p class="organization">Western Governors University</p>
+				<details>
+					<summary>View Graduate Coursework Highlights</summary>
+					<div class="details-content">
+						<p>Code available in the <a href="https://github.com/mrsimonsen/MSDADS-course-work"
+								target="_blank">MSDA Graduate Coursework Repository</a>.</p>
+						<ul>
+							<li><strong>Advanced Analytics:</strong> Neural networks, deep learning (PyTorch), NLP,
+								sentiment analysis.</li>
+							<li><strong>Machine Learning:</strong> Supervised (SVMs, k-NN), unsupervised (k-means,
+								t-SNE), time series forecasting.</li>
+							<li><strong>Deployment:</strong> Operationalization, scalable data pipelines, deployment at
+								scale.</li>
+							<li><strong>Optimization:</strong> Linear optimization (Python), gradient/non-gradient
+								algorithms.</li>
+						</ul>
+					</div>
+				</details>
+			</div>
+
+			<div class="card">
+				<div class="item-header">
+					<h3>Bachelor of Science in Technology and Engineering Education</h3>
+					<span class="dates">MAY 2015</span>
+				</div>
+				<p class="organization">Utah State University</p>
+			</div>
+
+			<div class="card">
+				<h3>Awards</h3>
+				<ul>
+					<li>Eagle Scout Award with Bronze Palm</li>
+					<li>Winner, Northrup Grumman Coding Challenge, Hill Air Force Base</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container footer-content">
+			<p>John Simonsen Portfolio | 2025</p>
+			<div class="footer-links">
+				<a href="https://github.com/mrsimonsen/" target="_blank">GitHub</a>
+				<a href="https://linkedin.com/in/john-simonsen/" target="_blank">LinkedIn</a>
+				<a href="#myHeader">Top</a>
+			</div>
 		</div>
 	</footer>
 
 	<script>
-		// Open and close sidebar
-		function w3_open() {
-			document.getElementById("mySidebar").style.display = "block";
+		// JavaScript for responsive mobile navigation toggle
+		function toggleNav() {
+			const navMenu = document.getElementById("navMenu");
+			navMenu.classList.toggle("active");
 		}
-
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
+		function closeNav() {
+			// Only close the menu if the window width suggests mobile view (where the menu is overlayed)
+			const navMenu = document.getElementById("navMenu");
+			if (window.innerWidth < 768) {
+				navMenu.classList.remove("active");
+			}
 		}
 	</script>
-
 </body>
 
 </html>
