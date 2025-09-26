@@ -5,474 +5,233 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>John Simonsen - Data Science & MLOps Portfolio</title>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="files/logo.png" rel="icon" type="image">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="simostyle.css">
 	<style>
-		:root {
-			--primary-color: #0056b3;
-			--secondary-color: #003d7a;
-			--background-color: #f4f7f9;
-			--text-color: #333;
-			--light-bg: #fff;
-			--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		/* Reset and Base Styles */
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			font-family: 'Inter', sans-serif;
-			line-height: 1.6;
-			color: var(--text-color);
-			background-color: var(--background-color);
-		}
-
-		.container {
-			width: 90%;
-			max-width: 1100px;
-			margin: auto;
-			overflow: hidden;
-		}
-
-		a {
-			text-decoration: none;
-		}
-
-		/* Header and Navigation */
-		header {
-			background: var(--light-bg);
-			color: var(--text-color);
-			padding: 1rem 0;
-			box-shadow: var(--shadow);
-			position: sticky;
-			top: 0;
-			z-index: 1000;
-		}
-
-		nav {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.nav-links {
-			list-style: none;
-			display: flex;
-		}
-
-		.nav-links li {
-			margin-left: 20px;
-		}
-
-		.nav-links a {
-			color: var(--text-color);
-			font-weight: 600;
-			transition: color 0.3s;
-		}
-
-		.nav-links a:hover {
-			color: var(--primary-color);
-		}
-
-		.logo {
-			font-size: 1.5rem;
-			font-weight: 700;
-		}
-
-		/* Profile Section */
-		#profile {
-			padding: 60px 0;
-			background: var(--light-bg);
-			margin-top: 20px;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-		}
-
-		.profile-content {
-			display: flex;
-			align-items: center;
-			gap: 40px;
-			flex-wrap: wrap;
-		}
-
-		.headshot {
-			width: 200px;
-			height: 200px;
-			border-radius: 50%;
-			object-fit: cover;
-			border: 5px solid var(--primary-color);
-			box-shadow: var(--shadow);
-			background-color: #ddd;
-			/* Fallback color if image fails */
-		}
-
-		.bio {
-			flex: 1;
-			min-width: 300px;
-		}
-
-		.bio h1 {
-			font-size: 2.5rem;
-			margin-bottom: 5px;
-		}
-
-		.bio h2 {
-			font-size: 1.2rem;
-			color: #666;
-			margin-bottom: 20px;
-		}
-
-		.social-links {
-			margin-top: 25px;
-		}
-
-		/* Buttons */
-		.btn {
-			font-weight: 600;
-			padding: 10px 20px;
-			border-radius: 5px;
-			transition: background-color 0.3s, color 0.3s;
-			margin-right: 15px;
-			display: inline-block;
-		}
-
-		.btn-primary {
-			background-color: var(--primary-color);
-			color: #fff;
-		}
-
-		.btn-primary:hover {
-			background-color: var(--secondary-color);
-		}
-
-		.btn-secondary {
-			border: 2px solid var(--primary-color);
-			color: var(--primary-color);
-		}
-
-		.btn-secondary:hover {
-			background-color: var(--primary-color);
-			color: #fff;
-		}
-
-		/* General Sections */
-		section {
-			padding: 60px 0;
-		}
-
-		h3.section-title {
-			color: var(--primary-color);
-			font-size: 2rem;
-			margin-bottom: 30px;
-			font-weight: 700;
-			border-bottom: 2px solid var(--background-color);
-			padding-bottom: 10px;
-		}
-
-		/* Skills Grid */
-		.skills-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 20px;
-		}
-
-		.skill-category {
-			background: var(--light-bg);
-			padding: 20px;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-			border-left: 4px solid var(--primary-color);
-		}
-
-		.skill-category h4 {
-			font-size: 1.2rem;
-			margin-bottom: 15px;
-			font-weight: 600;
-		}
-
-		.skill-category p {
-			font-size: 0.9rem;
-			color: #666;
-		}
-
-		/* Cards (Projects, Experience, Education) */
-		.card {
-			background: var(--light-bg);
-			padding: 25px;
-			margin-bottom: 25px;
-			border-radius: 8px;
-			box-shadow: var(--shadow);
-		}
-
-		.card h4 {
-			font-size: 1.4rem;
-			margin-bottom: 15px;
-			font-weight: 600;
-		}
-
-		.item-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: baseline;
-			flex-wrap: wrap;
-			margin-bottom: 15px;
-		}
-
-		.title {
-			font-weight: 700;
-			font-size: 1.2rem;
-		}
-
-		.organization {
-			color: #555;
-			font-style: italic;
-		}
-
-		.dates {
-			color: #888;
-			font-size: 0.9rem;
-			white-space: nowrap;
-		}
-
-		ul {
-			padding-left: 20px;
-		}
-
-		li {
-			margin-bottom: 10px;
-		}
-
-		/* Coursework Details */
-		details summary {
-			cursor: pointer;
-			font-weight: 600;
-			color: var(--primary-color);
-			margin-top: 15px;
-		}
-
-		details {
-			background: var(--background-color);
-			padding: 15px;
-			border-radius: 5px;
-		}
-
-		/* Footer */
-		footer {
-			text-align: center;
-			padding: 20px;
-			background: var(--text-color);
-			color: #fff;
-			margin-top: 40px;
-		}
-
-		/* Responsive Design */
-		@media(max-width: 768px) {
-			.profile-content {
-				flex-direction: column;
-				text-align: center;
-			}
-
-			.bio {
-				text-align: center;
-			}
-
-			.item-header {
-				flex-direction: column;
-				align-items: flex-start;
-			}
-
-			.dates {
-				margin-top: 5px;
-			}
-
-			nav {
-				flex-direction: column;
-			}
-
-			.nav-links {
-				margin-top: 10px;
-			}
-
-			.nav-links li {
-				margin: 0 10px;
-			}
-		}
-
-		/* Project Link Styling */
-		.project-links {
-			margin-top: 20px;
-		}
-
-		.btn-outline {
-			display: inline-block;
-			padding: 8px 15px;
-			border: 1px solid var(--primary-color);
-			border-radius: 5px;
-			font-weight: 600;
-			font-size: 0.9rem;
-			transition: background-color 0.3s, color 0.3s;
-			margin-right: 10px;
-		}
-
-		.btn-outline:hover {
-			background-color: var(--primary-color);
-			color: #fff;
+		/* Improve list readability within cards */
+		.w3-ul li {
+			padding: 8px 0;
 		}
 	</style>
 </head>
 
 <body>
-	<header>
-		<div class="container">
-			<nav>
-				<div class="logo">John Simonsen</div>
-				<ul class="nav-links">
-					<li><a href="index.html">Portfolio</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="#experience">Experience</a></li>
-					<li><a href="chatbot.html">Chatbot Demo</a></li>
-				</ul>
-			</nav>
+	<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center w3-theme-dark" style="display:none"
+		id="mySidebar">
+		<h1 class="w3-xxlarge w3-text-theme">Navigation</h1>
+		<button class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()">Close <i
+				class="fas fa-times"></i></button>
+		<a href="#profile" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
+				class="fas fa-user-circle"></i> Profile</a>
+		<a href="#skills" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i class="fas fa-cogs"></i>
+			Skills</a>
+		<a href="#projects" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
+				class="fas fa-laptop-code"></i> Projects</a>
+		<a href="#experience" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
+				class="fas fa-briefcase"></i> Experience</a>
+		<a href="#education" class="w3-bar-item w3-button w3-text-theme" onclick="w3_close()"><i
+				class="fas fa-graduation-cap"></i> Education</a>
+		<a href="chatbot.html" class="w3-bar-item w3-button w3-text-theme w3-border-top"><i class="fas fa-robot"></i>
+			Chatbot Demo</a>
+	</nav>
+
+	<header class="w3-container w3-theme-dark w3-padding" id="myHeader">
+		<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme-dark"></i>
+		<div class="w3-center w3-padding-32">
+			<span class="w3-xxxlarge w3-animate-bottom ">
+				<h1 class="w3-theme-dark w3-padding">John Simonsen</h1>
+			</span>
+			<h4 class="w3-theme-dark w3-padding">Data Science & MLOps Specialist</h4>
+			<br>
 		</div>
 	</header>
 
-	<main>
-		<section id="profile" class="container">
-			<div class="profile-content">
-				<img src="files/Simonsen.png" alt="John Simonsen Headshot" class="headshot"
-					onerror="this.alt='Headshot Placeholder'">
-				<div class="bio">
-					<h1>John Simonsen</h1>
-					<h2>Data Science & MLOps Specialist | Conifer, CO</h2>
-					<p>Master's Graduate in Data Science specializing in MLOps and the end-to-end machine learning
-						lifecycle. My expertise is demonstrated through developing a complete RAG-based Q&A application,
-						from data ingestion and containerization to deployment on Kubernetes. I have authored deployment
-						blueprints for AWS using Terraform and created CI/CD pipelines with GitHub Actions to ensure
-						robust, automated workflows. Combining these advanced MLOps skills with a decade of experience
-						in systems administration, I am well-equipped to build, scale, and maintain reliable AI/ML
-						solutions.</p>
-					<div class="social-links">
-						<a href="https://github.com/mrsimonsen/" target="_blank" class="btn btn-primary">GitHub</a>
-						<a href="https://linkedin.com/in/john-simonsen/" target="_blank"
-							class="btn btn-secondary">LinkedIn</a>
+	<div class="w3-container w3-content" style="max-width:1200px;margin-top:40px">
+
+		<div id="profile" class="w3-row w3-margin-bottom">
+			<div class="w3-card-4 w3-white w3-padding-large">
+				<div class="w3-row">
+					<div class="w3-col m3 l2 w3-center w3-padding">
+						<img src="files/Simonsen.png" alt="John Simonsen Headshot"
+							style="width:100%; max-width: 150px; border-radius: 50%; border: 4px solid #616161; background-color: #ddd;"
+							onerror="this.alt='Headshot Placeholder'">
+						<p>Conifer, CO</p>
+					</div>
+					<div class="w3-col m9 l10 w3-padding">
+						<h2>Professional Summary</h2>
+						<p>Master's Graduate in Data Science specializing in MLOps and the end-to-end machine learning
+							lifecycle. My expertise is demonstrated through developing a complete RAG-based Q&A
+							application, from data ingestion and containerization to deployment on Kubernetes. I have
+							authored deployment blueprints for AWS using Terraform and created CI/CD pipelines with
+							GitHub Actions to ensure robust, automated workflows. Combining these advanced MLOps skills
+							with a decade of experience in systems administration, I am well-equipped to build, scale,
+							and maintain reliable AI/ML solutions.</p>
+
+						<div class="w3-section">
+							<a href="https://github.com/mrsimonsen/" target="_blank"
+								class="w3-button w3-theme-d2 w3-margin-right"><i class="fab fa-github"></i> GitHub</a>
+							<a href="https://linkedin.com/in/john-simonsen/" target="_blank"
+								class="w3-button w3-theme-d2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 
-		<section id="skills">
-			<div class="container">
-				<h3 class="section-title">Technical Skills</h3>
-				<div class="skills-grid">
-					<div class="skill-category">
-						<h4>AI / Machine Learning</h4>
-						<p>PyTorch, Scikit-learn, NLTK, Regression, Classification, Clustering, Time Series, NLP, Neural
-							Networks (CNN, RNN/LSTM), RAG, LLMs (Ollama), LangChain</p>
-					</div>
-					<div class="skill-category">
-						<h4>Languages</h4>
-						<p>Python, SQL (PostgreSQL, MySQL, SQLite), Java, C++, Bash, HTML/CSS, JavaScript</p>
-					</div>
-					<div class="skill-category">
-						<h4>MLOps & Deployment</h4>
-						<p>MLflow, DVC, Git, CI/CD (GitHub Actions, GitLab), FastAPI</p>
-					</div>
-					<div class="skill-category">
-						<h4>Cloud & Infrastructure</h4>
-						<p>AWS (EKS, ECR, S3), Kubernetes, Docker, Terraform (IaC), Linux (Ubuntu)</p>
-					</div>
-					<div class="skill-category">
-						<h4>Databases & Tools</h4>
-						<p>ChromaDB (Vector DB), PostgreSQL, MySQL, SQLite, Tableau, Seaborn</p>
+		<div id="skills" class="w3-row w3-margin-top w3-padding-large">
+			<h2 class="w3-center">Technical Skills</h2>
+			<div class="w3-row-padding">
+
+				<div class="w3-col l4 m6 w3-margin-bottom">
+					<div class="w3-card w3-white">
+						<header class="w3-container w3-theme">
+							<h4>AI / Machine Learning</h4>
+						</header>
+						<div class="w3-container w3-padding">
+							<p>PyTorch, Scikit-learn, NLTK, Regression, Classification, Clustering, Time Series, NLP,
+								Neural Networks (CNN, RNN/LSTM), RAG, LLMs (Ollama), LangChain</p>
+						</div>
 					</div>
 				</div>
+
+				<div class="w3-col l4 m6 w3-margin-bottom">
+					<div class="w3-card w3-white">
+						<header class="w3-container w3-theme">
+							<h4>Languages</h4>
+						</header>
+						<div class="w3-container w3-padding">
+							<p>Python, SQL (PostgreSQL, MySQL, SQLite), Java, C++, Bash, HTML/CSS, JavaScript</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-col l4 m6 w3-margin-bottom">
+					<div class="w3-card w3-white">
+						<header class="w3-container w3-theme">
+							<h4>MLOps & Deployment</h4>
+						</header>
+						<div class="w3-container w3-padding">
+							<p>MLflow, DVC, Git, CI/CD (GitHub Actions, GitLab), FastAPI</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-col l4 m6 w3-margin-bottom">
+					<div class="w3-card w3-white">
+						<header class="w3-container w3-theme">
+							<h4>Cloud & Infrastructure</h4>
+						</header>
+						<div class="w3-container w3-padding">
+							<p>AWS (EKS, ECR, S3), Kubernetes, Docker, Terraform (IaC), Linux (Ubuntu)</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-col l4 m6 w3-margin-bottom">
+					<div class="w3-card w3-white">
+						<header class="w3-container w3-theme">
+							<h4>Databases & Tools</h4>
+						</header>
+						<div class="w3-container w3-padding">
+							<p>ChromaDB (Vector DB), PostgreSQL, MySQL, SQLite, Tableau, Seaborn</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
-		</section>
+		</div>
 
-		<section id="projects">
-			<div class="container">
-				<h3 class="section-title">Projects & Portfolio</h3>
+		<div id="projects" class="w3-row w3-margin-top w3-padding-large">
+			<h2 class="w3-center">Projects & Portfolio</h2>
 
-				<div class="card">
-					<h4>MLOps Stack Q&A Bot | End-to-end RAG Application with MLOps Pipeline</h4>
-					<ul>
+			<div class="w3-card-4 w3-white w3-margin-bottom">
+				<header class="w3-container w3-theme">
+					<h3>MLOps Stack Q&A Bot | End-to-end RAG Application</h3>
+				</header>
+				<div class="w3-container w3-padding-large">
+					<ul class="w3-ul">
 						<li>Developed a Retrieval-Augmented Generation (RAG) application designed to answer questions
 							about MLOps tools (ZenML, MLflow, Docker, etc.) by utilizing official documentation.</li>
 						<li>Engineered a data ingestion pipeline involving web scraping, text cleaning, chunking,
 							embedding generation (using Ollama), and storage in a ChromaDB vector database.</li>
 						<li>Built and containerized a RESTful API using FastAPI and Docker, and integrated it with a
 							front-end web interface (HTML/JavaScript).</li>
-						<li>Implemented comprehensive unit and integration testing using Pytest to ensure application
-							reliability.</li>
-						<li>Deployed the containerized application on a local Kubernetes cluster for development and
-							testing.</li>
+						<li>Implemented comprehensive unit and integration testing using Pytest.</li>
+						<li>Deployed the containerized application on a local Kubernetes cluster.</li>
 						<li>Authored a complete blueprint for cloud deployment, including Terraform configuration for
 							AWS (EKS, ECR, S3) and a CI/CD pipeline using GitHub Actions.</li>
 					</ul>
-					<div class="project-links">
-						<a href="https://github.com/mrsimonsen/mlops_qa_bot" target="_blank" class="btn-outline">View on
-							GitHub</a>
+					<div class="w3-padding">
+						<a href="https://github.com/mrsimonsen/mlops_qa_bot" target="_blank"
+							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
+						<a href="chatbot.html"
+							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme w3-margin-left">Live Demo
+							Page</a>
 					</div>
 				</div>
+			</div>
 
-				<div class="card">
-					<h4>Flight Delay Predictor | MLOps, CI/CD & Model Deployment</h4>
-					<ul>
+			<div class="w3-card-4 w3-white w3-margin-bottom">
+				<header class="w3-container w3-theme">
+					<h3>Flight Delay Predictor | MLOps, CI/CD & Model Deployment</h3>
+				</header>
+				<div class="w3-container w3-padding-large">
+					<ul class="w3-ul">
 						<li>Developed and deployed a machine learning model for predicting flight delays using Python,
 							FastAPI, Docker, and MLflow.</li>
-						<li>Utilized MLflow for model tracking, versioning, and deployment, showcasing experience with a
-							leading MLOps platform.</li>
+						<li>Utilized MLflow for model tracking, versioning, and deployment.</li>
 						<li>Implemented a CI/CD pipeline using GitLab to automate the testing (Pytest) and deployment
 							process.</li>
-						<li>Developed a well-documented API service using FastAPI to serve model predictions,
-							containerized with Docker to ensure reproducible deployments.</li>
+						<li>Developed a well-documented API service using FastAPI, containerized with Docker to ensure
+							reproducible deployments.</li>
 					</ul>
-					<div class="project-links">
+					<div class="w3-padding">
 						<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D602" target="_blank"
-							class="btn-outline">View on GitHub</a>
+							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
 					</div>
 				</div>
+			</div>
 
-				<div class="card">
-					<h4>Customer Sentiment Analysis | NLP & LSTM Networks</h4>
-					<ul>
+			<div class="w3-card-4 w3-white w3-margin-bottom">
+				<header class="w3-container w3-theme">
+					<h3>Customer Sentiment Analysis | NLP & LSTM Networks</h3>
+				</header>
+				<div class="w3-container w3-padding-large">
+					<ul class="w3-ul">
 						<li>Developed and trained an LSTM neural network model using PyTorch to classify customer
-							sentiment (positive/negative) from product and service reviews.</li>
+							sentiment from product and service reviews.</li>
 						<li>Implemented text data preparation pipeline including cleaning, tokenization (NLTK),
 							lemmatization, padding, and stratified splitting.</li>
-						<li>Employed techniques like embedding layers, dropout for regularization, and early
-							stopping to
+						<li>Employed techniques like embedding layers, dropout regularization, and early stopping to
 							mitigate overfitting.</li>
-						<li>Validated the model's predictive capability on a held-out test set, confirming its
-							ability
-							to generalize sentiment patterns from text data.</li>
+						<li>Validated the model's predictive capability on a held-out test set.</li>
 					</ul>
-					<div class="project-links">
-						<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D04/Task2" target="_blank"
-							class="btn-outline">View on GitHub</a>
+					<div class="w3-padding">
+						<a href="https://github.com/mrsimonsen/MSDADS-course-work/tree/main/D604/Task2" target="_blank"
+							class="w3-button w3-border w3-border-theme w3-round w3-hover-theme">View on GitHub</a>
 					</div>
 				</div>
-
 			</div>
-		</section>
+		</div>
 
-		<section id="experience">
-			<div class="container">
-				<h3 class="section-title">Professional Experience</h3>
+		<div id="experience" class="w3-row w3-margin-top w3-padding-large">
+			<h2 class="w3-center">Professional Experience</h2>
 
-				<div class="card">
-					<div class="item-header">
-						<div>
-							<span class="title">AI Trainer</span>
-							<span class="organization">| Alignerr (Remote) & DataAnnotation (Remote)</span>
-						</div>
-						<span class="dates">2024 - Present</span>
-					</div>
-					<ul>
+			<div class="w3-card w3-white w3-margin-bottom">
+				<div class="w3-container w3-padding-large">
+					<h3 class="w3-opacity"><b>AI Trainer</b></h3>
+					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>2024 - Present
+					</h4>
+					<p><i>Alignerr (Remote) & DataAnnotation (Remote)</i></p>
+					<hr>
+					<ul class="w3-ul">
 						<li>Contribute to specialized AI model evaluation projects, assessing capabilities in code
 							generation, technical problem-solving, and multi-language instruction adherence to refine
 							model performance.</li>
@@ -484,17 +243,15 @@
 							evaluation of technical and conversational model outputs.</li>
 					</ul>
 				</div>
+			</div>
 
-				<div class="card">
-					<div class="item-header">
-						<div>
-							<span class="title">Systems Administrator & Technical Instructor</span>
-							<span class="organization">| Northern Utah Academy for Math, Engineering, and Science
-								(Layton, UT)</span>
-						</div>
-						<span class="dates">2016 - 2023</span>
-					</div>
-					<ul>
+			<div class="w3-card w3-white w3-margin-bottom">
+				<div class="w3-container w3-padding-large">
+					<h3 class="w3-opacity"><b>Systems Administrator & Technical Instructor</b></h3>
+					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>2016 - 2023</h4>
+					<p><i>Northern Utah Academy for Math, Engineering, and Science (Layton, UT)</i></p>
+					<hr>
+					<ul class="w3-ul">
 						<li>System Administration & User Support: Administered and maintained a 28-workstation Ubuntu
 							lab, managing all aspects including software/system updates, user account provisioning, and
 							remote troubleshooting.</li>
@@ -507,85 +264,100 @@
 					</ul>
 				</div>
 			</div>
-		</section>
+		</div>
 
-		<section id="education">
-			<div class="container">
-				<h3 class="section-title">Education</h3>
-				<div class="card">
-					<div class="item-header">
-						<div>
-							<span class="title">Master of Science in Data Analytics - Data Science</span><br>
-							<span class="organization">Western Governors University</span>
-						</div>
-						<span class="dates">APRIL 2025</span>
-					</div>
-					<details>
-						<summary>View Graduate Coursework Highlights</summary>
-						<p style="margin-bottom: 15px; padding: 10px; background: var(--background-color);">
-							Code and documentation for the following courses can be explored in the <a
-								href="https://github.com/mrsimonsen/MSDADS-course-work" target="_blank"
-								style="color: var(--primary-color); font-weight: 600;">MSDA Graduate Coursework
-								Repository</a>.
-						</p>
-						<ul>
-							<li><strong>D604: Advanced Analytics:</strong> Neural networks, deep learning
-								(PyTorch),
-								NLP, computer vision, sentiment analysis.</li>
-							<li><strong>D603: Machine Learning:</strong> Supervised (k-NN, SVMs, decision
-								trees),
-								unsupervised (k-means, hierarchical clustering, t-SNE), ensemble methods, and
-								time
-								series forecasting.</li>
-							<li><strong>D600: Statistical Data Mining:</strong> Regression (linear and
-								logistic),
-								dimensionality reduction (PCA).</li>
-							<li><strong>D602: Deployment:</strong> Operationalization, scalable data product
-								pipelines,
-								deployment at scale (security, usability).</li>
-							<li><strong>D605: Optimization:</strong> Linear optimization (Python), gradient and
-								non-gradient-based algorithms.</li>
-							<li><strong>D606: Data Science Capstone:</strong> End-to-end project development and
-								implementation.</li>
-							<li><strong>D601: Data Storytelling:</strong> Data visualization, interactive
-								dashboards,
-								tailored communication.</li>
-							<li><strong>D597: Data Management:</strong> Relational (SQL) and non-relational
-								databases,
-								data modeling, efficient querying.</li>
-						</ul>
-					</details>
-				</div>
+		<div id="education" class="w3-row w3-margin-top w3-padding-large">
+			<h2 class="w3-center">Education</h2>
 
-				<div class="card">
-					<div class="item-header">
-						<div>
-							<span class="title">Bachelor of Science in Technology and Engineering Education</span><br>
-							<span class="organization">Utah State University</span>
-						</div>
-						<span class="dates">MAY 2015</span>
-					</div>
+			<div class="w3-card w3-white w3-margin-bottom">
+				<div class="w3-container w3-padding-large">
+					<h3 class="w3-opacity"><b>Master of Science in Data Analytics - Data Science</b></h3>
+					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>APRIL 2025</h4>
+					<p><i>Western Governors University</i></p>
+					<hr>
+					<button onclick="document.getElementById('courseworkModal').style.display='block'"
+						class="w3-button w3-theme-d2">View Graduate Coursework Highlights</button>
 				</div>
 			</div>
-		</section>
 
-		<section id="awards">
-			<div class="container">
-				<h3 class="section-title">Awards and Recognition</h3>
-				<div class="card">
-					<ul>
+			<div class="w3-card w3-white w3-margin-bottom">
+				<div class="w3-container w3-padding-large">
+					<h3 class="w3-opacity"><b>Bachelor of Science in Technology and Engineering Education</b></h3>
+					<h4 class="w3-text-theme"><i class="fa fa-calendar-alt fa-fw w3-margin-right"></i>MAY 2015</h4>
+					<p><i>Utah State University</i></p>
+				</div>
+			</div>
+		</div>
+
+		<div id="awards" class="w3-row w3-margin-top w3-padding-large w3-margin-bottom">
+			<h2 class="w3-center">Awards and Recognition</h2>
+			<div class="w3-card w3-white w3-margin-bottom">
+				<div class="w3-container w3-padding-large">
+					<ul class="w3-ul">
 						<li>Eagle Scout Award with Bronze Palm</li>
 						<li>Winner, Northrup Grumman Coding Challenge, Center for Excellence Open House, Hill Air Force
 							Base</li>
 					</ul>
 				</div>
 			</div>
-		</section>
-	</main>
+		</div>
 
-	<footer>
-		<p>John Simonsen Portfolio | 2025</p>
+	</div>
+
+	<div id="courseworkModal" class="w3-modal">
+		<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:800px">
+			<header class="w3-container w3-theme-dark">
+				<span onclick="document.getElementById('courseworkModal').style.display='none'"
+					class="w3-button w3-display-topright">&times;</span>
+				<h2>MSDA Graduate Coursework</h2>
+			</header>
+			<div class="w3-container w3-padding-large">
+				<p>Code and documentation can be explored in the <a
+						href="https://github.com/mrsimonsen/MSDADS-course-work" target="_blank"
+						class="w3-text-theme">MSDA Graduate Coursework Repository</a>.</p>
+				<ul class="w3-ul w3-border">
+					<li><strong>D604: Advanced Analytics:</strong> Neural networks, deep learning (PyTorch), NLP,
+						computer vision, sentiment analysis.</li>
+					<li><strong>D603: Machine Learning:</strong> Supervised (k-NN, SVMs, decision trees), unsupervised
+						(k-means, t-SNE), ensemble methods, and time series forecasting.</li>
+					<li><strong>D600: Statistical Data Mining:</strong> Regression (linear and logistic), dimensionality
+						reduction (PCA).</li>
+					<li><strong>D602: Deployment:</strong> Operationalization, scalable data product pipelines,
+						deployment at scale.</li>
+					<li><strong>D605: Optimization:</strong> Linear optimization (Python), gradient and
+						non-gradient-based algorithms.</li>
+					<li><strong>D606: Data Science Capstone:</strong> End-to-end project development and implementation.
+					</li>
+					<li><strong>D601: Data Storytelling:</strong> Data visualization, interactive dashboards, tailored
+						communication.</li>
+					<li><strong>D597: Data Management:</strong> Relational (SQL) and non-relational databases, data
+						modeling.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer class="w3-container w3-theme-dark w3-padding-16">
+		<h3>John Simonsen Portfolio | 2025</h3>
+		<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+		<div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+			<span class="w3-text w3-theme-light w3-padding">Go To Top</span>
+			<a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+					<i class="fa fa-chevron-circle-up"></i></span></a>
+		</div>
 	</footer>
+
+	<script>
+		// Open and close sidebar
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+		}
+
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+	</script>
+
 </body>
 
 </html>
